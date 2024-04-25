@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Filiere extends Model
 {
+
     use HasFactory;
+
+    protected $fillable = [
+        'nom',
+        'description',
+        'type'
+    ];
+    public function chef()
+{
+ return $this->belongsTo(Chef::class);
+}
+
 }

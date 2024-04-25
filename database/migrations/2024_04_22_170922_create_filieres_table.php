@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('description');
-            $table->string('type');
+            $table->enum('type',['licence','master'])->default('licence');
             $table->timestamps();
         });
     }

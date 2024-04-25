@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('consultations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('candidat_id')->constrained('candidats')->onDelete('cascade');
+            $table->foreignId('filiere_id')->constrained('filieres')->onDelete('cascade');
             $table->enum('verification',["en cours","executer","non executer"])->default("en cours");
             $table->timestamps();
         });

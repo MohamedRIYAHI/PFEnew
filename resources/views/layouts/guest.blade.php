@@ -18,7 +18,9 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="250px" height="250px" viewBox="0 0 267 300" enable-background="new 0 0 267 300" xml:space="preserve">
+                    <x-application-logo class="w-20 h-20 text-gray-500 fill-current" />
+                </svg>
                 </a>
             </div>
 

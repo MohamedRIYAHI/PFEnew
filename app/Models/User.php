@@ -11,15 +11,27 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nom',
+        'nom_arabe',
+        'prenom',
+        'prenom_arabe',
         'email',
+        'email_verified_at',
         'password',
+        'cin',
+        'phone',
+        'photo',
+        'sexe',
+        'date_naissance',
+        'lieu_naissance',
+        'lieu_naissance_arabe',
     ];
 
     /**
@@ -32,6 +44,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+
+
+
     /**
      * Get the attributes that should be cast.
      *
@@ -43,5 +58,14 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function chefs(){
+        return $this->hasMany(Chef::class);
+    }
+
+    public function candidat()
+    {
+        return $this->hasMany(Candidat::class);
     }
 }

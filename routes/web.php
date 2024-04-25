@@ -1,10 +1,19 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Filiere;
+use App\Models\User;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $licences = Filiere::where('type', 'licence')->get();
+    $masters = Filiere::where('type', 'master')->get();
+    //$users = User::all();
+    //dd(
+        //$users->map->candidat
+   // );
+    return view('welcome',compact('licences','masters'));
 });
 
 Route::get('/dashboard', function () {
