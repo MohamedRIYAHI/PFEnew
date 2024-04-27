@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StaticController;
 use App\Models\Filiere;
 use App\Models\User;
 
@@ -22,9 +23,15 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::get('/profile/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+route::get('/test',[StaticController::class,'formuaire']);
+route::get('/fsjes',[StaticController::class,'fsjes']);
+
+
+Route::get('/test', function () {
+    return view('test');
 });
 
 require __DIR__.'/auth.php';
