@@ -8,6 +8,7 @@ use App\Http\Controllers\MessagerieController;
 
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StaticController;
 use App\Models\Filiere;
 
 
@@ -61,6 +62,13 @@ Route::group(['prefix' => 'messages', 'as' => 'messages'], function () {
     Route::get('{thread}', [MessagerieController::class, 'show'])->name('.show');
     Route::put('{thread}', [MessagerieController::class, 'update'])->name('.update');
     Route::delete('{thread}', [MessagerieController::class, 'destroy'])->name('.destroy');
+});
+route::get('/test',[StaticController::class,'formuaire']);
+route::get('/fsjes',[StaticController::class,'fsjes']);
+
+
+Route::get('/test', function () {
+    return view('test');
 });
 
 });
