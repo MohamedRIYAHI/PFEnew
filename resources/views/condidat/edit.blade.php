@@ -1,0 +1,1 @@
+// here you will edit a form with two steps step 1 : Personal Info you will store them in the User table and step 2 : Academic Info you will store them in the Candidat Table and when you will click on submit the verification in the Conultation table it will return to en cours value
