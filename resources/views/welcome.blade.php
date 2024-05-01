@@ -41,7 +41,6 @@
                 <li role="none" class="flex items-stretch">
                     <a role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8" href="javascript:void(0)"> <span>Mot de Directeur</span> </a>
                 </li>
-
                             @if (Route::has('login'))
                                 @auth
 
@@ -73,6 +72,44 @@
             <x-slider/>
             </svg>
         </div>
+        <div class="grid grid-cols-1">
+            <div>
+
+                <h2 class="font-bold text-2xl flex justify-center">Bienvenue sur le Portail de Formation Continue de Faculté Hassan 2 des Sciences Aïn Chock de Casablanca </h2>
+            </div>
+            <p class="font-serif">
+                Nous vous souhaitons la bienvenue sur notre plateforme dédiée à l'excellence professionnelle et au développement continu. À l'Université Faculté Hassan 2 des Sciences , nous comprenons l'importance cruciale de rester compétitif dans un monde en constante évolution. C'est pourquoi nous sommes fiers de vous offrir une gamme complète de programmes de formation continue conçus pour répondre aux besoins spécifiques des professionnels d'aujourd'hui.
+            </p>
+            <p class="font-serif">
+                Les programmes de formation continue à l'Université Faculté Hassan 2 des Sciences sont élaborés et dispensés par des professeurs renommés et des praticiens chevronnés, garantissant ainsi une combinaison idéale entre théorie et pratique. Vous bénéficierez de l'expertise académique de notre institution de premier plan ainsi que des conseils avisés de professionnels expérimentés dans votre domaine.
+            </p>
+        </div>
+        <div class="pt-4 flex justify-between">
+            <button class="w-[420px] bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Licence
+            </button>
+            <button class="w-[420px] bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Master
+            </button>
+        </div>
+        <div class="pt-4 grid grid-cols-3 gap-4">
+            @foreach($licences as $licence)
+
+                <a href="">
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">{{ $licence->nom }}</div>
+                            <p class="text-gray-700 text-base">
+                                {{ $licence->description }}
+                            </p>
+                        </div>
+                    </div>
+
+                </a>
+            @endforeach
+        </div>
+
+
     </div>
 </header>
 
