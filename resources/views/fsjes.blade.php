@@ -1,439 +1,236 @@
 
-
-
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Pré-inscription</title>
-
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <style>
-        .ibox-content {border-width: 3px 0px } 
-		.form-control {height: 28px; padding: 2px 8px;}
-        .top-navigation .wrapper.wrapper-content{padding:0px 25px 40px 25px}
-        
-		.select2-container--default .select2-selection--single{border-radius:0px}
-		.select2-container--default .select2-selection--single{border:1px solid #e5e6e7}
-		.select2-container--default .select2-selection--multiple{border:1px solid #e5e6e7}
-		.select2-container--default.select2-container--focus .select2-selection--multiple{border:solid #00cbcc 1px;outline:0;}
-		.select2-container--default.select2-container--focus .select2-selection--single{border:solid #00cbcc 1px;outline:0;}    
-
-        @media only screen and (max-width: 600px) {
-            #id_photo {font-size:8px}
-            #effacer_photo {font-size:9px}
-            .wizard > .actions a{font-size:9px}
-        } 
-        @media only screen and (min-width: 601px) {
-            #id_photo {font-size:12px}
-            #effacer_photo {font-size:13px}
-        }
-
-        #navbar.two-logos {
-            display: flex !important;
-            justify-content: space-between;
-        }
-        #navbar.two-logos::before, #navbar.two-logos::after {
-            content: none;
-        }
-
-        .autre_choice input {
-            margin-top: 10px;
-        }
-        .top-msg {
-            padding-top: 10px;
-            color: var(--warning);
-            font-weight: bold;
-        }
-        .form-section {
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px 0;
-        }
-        .block-label {
-            margin-top: 15px;
-            margin-bottom: -5px;
-        }
-        .block-label label {
-            margin-bottom: 0;
-        }
-
-        .edit-form-container {
-            border: 1px solid #ddd;
-            padding: 5px 20px;
-            border-radius: 5px;
-            margin-top: 15px;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, .05);
-        }
-
-        .inner-edit-form {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .inner-edit-form .form-group {
-            margin-right: 10px;
-            flex: 1;
-        }
-
-        .pwd-wrapper {
-            position: relative;
-        }
-        .pwd-wrapper .eye-btn {
-            position: absolute;
-            top: 0;
-            right: 0;
-            color: #333;
-        }
-        .pwd-wrapper .eye-btn i {
-            line-height: 17px;
-            padding: 5px;
-        }
-        .pwd-wrapper input {
-            padding-right: 25px;
-        }
-
-        select.select2, span.select2 {
-            width: 100% !important;
-        }
-
-        .rtl label {
-           margin-bottom: 2px;
-        }
-    </style>
-    
+      .finish-button {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+      }
+  </style>
 </head>
+<body class="h-screen flex items-center justify-center" style="background: #edf2f7;">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
-<body class="top-navigation">
 
-    <div id="wrapper">
-        <div id="page-wrapper" class="gray-bg">
-        <div class="row border-bottom white-bg">
-        <nav class="navbar navbar-static-top" role="navigation">
-            <div class="navbar-collapse collapse text-center two-logos" id="navbar">
-                <img class="text-center" alt="image" style="padding: 10px 20px; max-height:120px;"  src="/media/img/logo.png" />
-                
-                    <img class="text-center" alt="image" style="padding: 10px 20px; max-height:120px;"  src="/media/img/logo2.png" />
-                
-            </div>
-        </nav>
+<section class=" py-1 bg-blueGray-50">
+<div class="w-full lg:w-8/12 px-4 mx-auto mt-6" >
+  <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+    <div class="rounded-t bg-white mb-0 px-6 py-6">
+      <div class="text-center flex justify-between">
+        <p>
+            Tous les champs avec une Astérix (*) sont obligatoires.
+        </p> <br/>
+        <h6 class="text-blueGray-700 text-xl font-bold">
+          My account
+        </h6>
+        <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
+          Settings
+        </button>
+      </div>
     </div>
-
-    <div class="wrapper wrapper-content" style="padding-top:3px">
-            
-        <div class="row">
-            <h2 class="text-center" style="font-weight:700">Formulaire de pré-inscription en ligne - Formation Continue </h2>
-            <h3 class="text-center" style="font-weight:600">Année universitaire : 2024/2025</h3>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    
-                    <p>
-                        Tous les champs avec une Astérix (*) sont obligatoires.
-                    </p>
-
-                    <div class="steps-wrapper">
-                        <ul class="steps-list">
-                            <li class=" current ">
-                                <h3>1. Informations personnelles</h3>
-                            </li>
-                            <li class="">
-                                <h3>2. Formations académiques</h3>
-                            </li>
-                            
-                        </ul>
-                    </div>
-
-                    <form id="form" action="" method="post" class="wizard-big" enctype="multipart/form-data">
-                        <input type='hidden' name='csrfmiddlewaretoken' value='MVOJB7MfCvlypXdlZmRH4dJwitytGSciHrbuuKKQjsVsIzZ8PNjZfOWne3LXeTPM' />
-                        
-                            <h1>Informations personnelles</h1>
-                            <div class="form-section row">
-                                <div class="col-sm-12">
-                                    <div class="col-sm-12">
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <h4>Photo d'identité</h4>
-                                                    <img src="/static/preinscription/img/img_null.png" id="img" alt="image" style=" max-width: 112px;max-height: 135px;margin-bottom:5px">
-                                                <br>
-                                                <div class="btn-group">
-                                                    <input type="file" name="photo" class="form-control" id="id_photo" />
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div style="margin-bottom: 30px; width: 100%;"></div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <div class="col-sm-12">
-                                            <div class="form-group col-sm-6" style="padding-left: 0;">
-                                                <label>Nom (*)</label>
-                                                <input type="text" name="nom" class="form-control" maxlength="256" required id="id_nom" />
-                                                
-                                            </div>
-                                            <div class="form-group col-sm-6 rtl" style="padding-right: 0;">
-                                                <label>الإسم العائلي (*)</label>
-                                                <input type="text" name="nom_ar" class="form-control rtl" maxlength="256" required id="id_nom_ar" />
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group col-sm-6" style="padding-left: 0;">
-                                                <label>Prénom (*)</label>
-                                                <input type="text" name="prenom" class="form-control" maxlength="256" required id="id_prenom" />
-                                                
-                                            </div>
-                                            <div class="form-group col-sm-6 rtl" style="padding-right: 0;">
-                                                <label>الإسم الشخصي (*)</label>
-                                                <input type="text" name="prenom_ar" class="form-control rtl" maxlength="256" required id="id_prenom_ar" />
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="container mt-5">
-                                            <div class="form-group">
-                                              <label for="datePicker">Date de naissance :</label>
-                                              <input type="text" class="form-control" id="datePicker" placeholder="Cliquez pour choisir une date">
-                                            </div>
-                                          </div>
-                        
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
-                            <script>
-                            $(document).ready(function(){
-                              $('#datePicker').datepicker({
-                                format: 'dd/mm/yyyy',
-                                autoHide: true
-                              });
-                            });
-                            </script>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group col-sm-6" style="padding-left: 0;">
-                                                <label>Lieu de naissance (*)</label>
-                                                <input type="text" name="lieu_naissance" class="form-control" maxlength="256" required id="id_lieu_naissance" />
-                                                
-                                            </div>
-                                            <div class="form-group col-sm-6 rtl" style="padding-right: 0;">
-                                                <label>مكان الازدياد (*)</label>
-                                                <input type="text" name="lieu_naissance_ar" class="form-control rtl" maxlength="256" required id="id_lieu_naissance_ar" />
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="">
-                                                <label>Sexe (*)</label>
-                                                <select name="sexe" class="form-control" required id="id_sexe">
-  <option value="" selected>----</option>
-
-  <option value="H">Homme</option>
-
-  <option value="F">Femme</option>
-
-</select>
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="">
-                                                <label>Statut</label>
-                                                <select name="statut" class="form-control" id="id_statut">
-  <option value="" selected>-------------</option>
-
-  <option value="ETUDIANT">ETUDIANT</option>
-
-  <option value="EMPLOYE">EMPLOYE</option>
-
-  <option value="STAGIAIRE">STAGIAIRE</option>
-
-  <option value="SANS EMPLOI">A LA RECHERCHE D'UN EMPLOI</option>
-
-</select>
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="">
-                                                <label>Adresse</label>
-                                                <textarea name="adr_personnelle" cols="40" rows="3" class="form-control" maxlength="2560" id="id_adr_personnelle">
-</textarea>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 col-sm-12">
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="">
-                                                <label>CIN (*)</label>
-                                                <input type="text" name="cin" class="form-control" maxlength="30" required id="id_cin" />
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="display: none;">
-                                                <label></label>
-                                                
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="">
-                                                <label>Téléphone portable (*)</label>
-                                                <input type="text" name="numero_tel" class="form-control" maxlength="15" required id="id_numero_tel" />
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="">
-                                                <label>Téléphone fixe</label>
-                                                <input type="text" name="numero_tel2" class="form-control" maxlength="15" id="id_numero_tel2" />
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="">
-                                                <label>Adresse Email (*)</label>
-                                                <input type="email" name="adr_email" class="form-control" maxlength="254" required id="id_adr_email" />
-                                                
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <div class="form-group" style="">
-                                                <label>Confirmer votre adresse email</label>
-                                                <input type="email" name="adr_email2" class="form-control" onpaste="return false;" id="id_adr_email2" />
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-
-                        <!-- Buttons -->
-                        <div class="action-btns">
-                            
-                            
-                                <button type="button" class="btn btn-info" onclick="next()">Suivant</button>
-                            
-                            
-                        </div>
-                    </form>
-                </div>
-                
-                </div>
-            
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+      <form>
+        <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+          User Information
+        </h6>
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                Username
+              </label>
+              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="lucky.jesse">
             </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                Email address
+              </label>
+              <input type="email" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="jesse@example.com">
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                First Name
+              </label>
+              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Lucky">
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                Last Name
+              </label>
+              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Jesse">
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                Last Name
+              </label>
+              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Jesse">
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                Last Name
+              </label>
+              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Jesse">
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                Last Name
+              </label>
+              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Jesse">
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                Last Name
+              </label>
+              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Jesse">
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                Last Name
+              </label>
+              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" value="Jesse">
+            </div>
+          </div>
+
+          <div class="flex flex-wrap">
+            <div class="w-full lg:w-6/12 px-4">
+              <div class="relative w-full mb-3">
+               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                 
+                <h2>Année du dernier diplôme(*)</h2>
+            </label>
+            <select id="annees-select" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  var anneeActuelle = new Date().getFullYear();
+                  var anneeDebut = 1980;
+                  var selectAnnees = document.getElementById("annees-select");
+      
+                  for (var annee = anneeActuelle; annee >= anneeDebut; annee--) { // Boucle décroissante
+                    var optionAnnee = document.createElement("option");
+                    optionAnnee.value = annee;
+                    optionAnnee.textContent = annee;
+                    selectAnnees.appendChild(optionAnnee);
+                  }
+                });
+              </script></select>
+               </label>
+             </div>
+           </div>
+
+           <div style="border: 1px solid #ccc; padding: 10px;">
+            <fieldset>
+                <legend>Sélectionner un fichier à télécharger</legend>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="fichier">
+                    <button type="submit">Envoyer</button>
+                </form>
+            </fieldset>
         </div>
 
-        <div class="footer">
-            <div>
-                <strong>Copyright</strong> Aptus Consulting &copy; 2019
-            </div>
+        <div class="w-full lg:w-6/12 px-4">
+          <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="id_sexe">
+                  Série du baccalauréat (*)
+              </label>
+              <div class="col-sm-12">
+                  <div class="form-group">
+                      <select name="sexe" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required id="id_sexe" onchange="autreSelected(this)">
+                          <option value="" selected>--------------</option>
+                          <option value="">BAC SCIENCES AGRONOMIQUES</option>
+                          <option value="">BAC SCIENCES MATHÉMATIQUES B</option>
+                          <option value="">BAC SCIENCES PHYSIQUES CHIMIE</option>
+                          <option value="">BAC SCIENCES ET TECHNOLOGIES ÉLECTRIQUES</option>
+                          <option value="">BAC SCIENCES ET TECHNOLOGIES MÉCANIQUES</option>
+                          <option value="">BAC ETRANGER (MISSION)</option>
+                          <option value="autre">AUTRE</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          <div id="autreField" style="display: none;" class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="autre_input">
+                  Autre Série du baccalauréat (*)
+              </label>
+              <div class="col-sm-12">
+                  <div class="form-group">
+                      <input type="text" id="autre_input" name="autre_serie" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Entrez votre série" required>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <script>
+          function autreSelected(selectElement) {
+              var autreField = document.getElementById("autreField");
+              var autreInput = document.getElementById("autre_input");
+              if (selectElement.value === "autre") {
+                  autreField.style.display = "block";
+                  autreInput.required = true;
+              } else {
+                  autreField.style.display = "none";
+                  autreInput.required = false;
+              }
+          }
+      </script>
+
+
+          <div class="w-full lg:w-6/12 px-4"></div>
+          <div class="w-full lg:w-6/12 px-4"></div>
+
+        <!--buttonW-->
+          <div class="w-full lg:w-6/12 px-4">
+            <!-- Votre formulaire existant ici -->
+           </div>
+            <!-- Bouton "Terminer" -->
+      <button class="inline-flex items-center justify-center h-8 gap-2 px-4 text-xs font-medium tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-500 shadow-emerald-200 hover:bg-emerald-600 hover:shadow-sm hover:shadow-emerald-200 focus:bg-emerald-700 focus:shadow-sm focus:shadow-emerald-200 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">Terminer</button>
+
+      
         </div>
+
+        <hr class="mt-6 border-b-1 border-blueGray-300">
+
+       
+        </div>
+      </form>
     </div>
-
-    <!-- Modals -->
-    <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-primary" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <h4 class="modal-title" style="font-size: 25px; text-align: center;">
-                        Voulez-vous confirmer l’envoie de votre formulaire ?
-                    </h4>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-                    <button class="btn btn-primary" onclick="finish()" type="button">Valider</button>
-                </div>
-            </div>
+  </div>
+  <footer class="relative  pt-8 pb-6 mt-2">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center md:justify-between justify-center">
+      <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+        <div class="text-sm text-blueGray-500 font-semibold py-1">
+          Made with <a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank">Notus JS</a> by <a href="https://www.creative-tim.com" class="text-blueGray-500 hover:text-blueGray-800" target="_blank"> Creative Tim</a>.
         </div>
+      </div>
     </div>
-
-    <!-- Mainly scripts -->
-    <script src="/static/preinscription/js/jquery-2.1.1.js"></script>
-    <script src="/static/preinscription/js/bootstrap.min.js"></script>
-    <script src="/static/preinscription/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="/static/preinscription/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="/static/preinscription/js/inspinia.js"></script>
-    <script src="/static/preinscription/js/plugins/pace/pace.min.js"></script>
-    
-	<script src="/static/preinscription/js/bootstrap-datetimepicker.js"></script> 
-	<script src="/static/preinscription/js/bootstrap-datetimepicker.fr.js"></script>
-
-    <script src="/static/preinscription/js/plugins/select2/select2.full.min.js"></script>
-
-    <script type="text/javascript">
-        $('.date_field').datetimepicker({
-            language:  'fr',
-            weekStart: 1,
-            todayBtn:  1,
-            autoclose: 1,
-            todayHighlight: 1,
-            startView: 2,
-            minView: 2,
-            format: 'dd/mm/yyyy',
-            forceParse: 0
-        });
-    </script>
-     <script>
-         $('.select2').select2();
-     </script>
-
-    <script>
-        function next() {
-            let form = $('#form');
-            form.append("<input type='hidden' name='action' value='NextStep'>");
-            form.submit();
-        }
-        function back() {
-            let form = $('#form');
-            form.append("<input type='hidden' name='action' value='PreviousStep'>");
-            form.submit();
-        }
-        function finish() {
-            let div = document.createElement('div');
-            div.style.cssText = 'display: block; opacity: 1; position: fixed; top: 0; left: 0;' +
-                'width: 100%; height: 100%; background-color: rgba(0, 0, 0, .3); z-index: 99999;'
-            $(div).append('<div style="margin-left:auto;margin-right:auto;width:400px;font-size:18px;background-color:white;padding:5px 0px">' +
-                    '<center>Traitement en cours, Patienter...</center>' +
-                '</div>');
-            $('body').append(div);
-
-            let form = $('#form');
-            form.append("<input type='hidden' name='action' value='Save'>");
-            form.submit();
-        }
-    </script>
-
-   
-
+  </div>
+  </div>
+</footer>
+</div>
+</section>
 </body>
-
 </html>

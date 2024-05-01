@@ -26,12 +26,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-route::get('/test',[StaticController::class,'formuaire']);
+route::get('/test',[StaticController::class,'formulaire']);
 route::get('/fsjes',[StaticController::class,'fsjes']);
+route::get('/test2',[StaticController::class,'test2']);
+route::get('/test',[StaticController::class,'test']);
 
 
-Route::get('/test', function () {
-    return view('test');
-});
+
+
 
 require __DIR__.'/auth.php';
