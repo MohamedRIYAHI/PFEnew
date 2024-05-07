@@ -65,8 +65,8 @@ Route::group(['prefix' => 'messages', 'as' => 'messages'], function () {
 });
 route::get('/test',[StaticController::class,'formulaire']);
 route::get('/fsjes',[StaticController::class,'fsjes']);
-route::get('/test2',[StaticController::class,'test2']);
-route::get('/test',[StaticController::class,'test']);
+route::get('/test2',[StaticController::class,'test2'])->name('test2');
+route::get('/test',[StaticController::class,'test'])->name('test');
 
 
 
