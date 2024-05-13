@@ -1,3 +1,180 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Cards */
+.card {
+    position: relative;
+    width: 400px;
+    height: 160px;
+    border-radius: 14px;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 390px;
+    height: 150px;
+    z-index: 2;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid white;
+}
+
+.blob {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #0000FF;
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 10s infinite linear;
+}
+
+@keyframes blob-bounce {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(250px, 0);
+    }
+
+    50% {
+        transform: translate(250px, 110px);
+    }
+
+    75% {
+        transform: translate(0, 110px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+/* button */
+#custom-button {
+    transition: color 0.8s ease-in-out, transform 0.8s ease-in-out,
+    background-color 0.8s ease-in-out;
+}
+
+#custom-button:hover {
+    color: #8ac6dd;
+    transform: scale(1.1);
+    background-color: blue;
+}
+
+
+/* photo filiere*/
+.cadre {
+    width: 1000px;
+    margin: 0 auto;
+    border: 0px solid #ccc;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image {
+    width: 1000px;
+    height: 350px;
+    border-radius: 10px;
+    display: block;
+    margin-top: 20px;
+}
+.prof {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
+
+
+
+/* Body */
+.all {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.titre {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2em;
+}
+
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+section h2 {
+    color: #007bff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+section p , p{
+    margin: 20px 0 20px;
+}
+
+
+.aa {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.ww {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#ww {
+    color: #333;
+}
+
+.ww p, ul, ol {
+    color: #666;
+}
+
+.ww ul, ol {
+    margin-left: 20px;
+}
+
+.ww li {
+    margin-bottom: 10px;
+}
+
+

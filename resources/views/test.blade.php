@@ -27,7 +27,8 @@
       </div>
     </div>
     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-      <form>
+      <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" >
+          @csrf
         <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
             Informations personnelles    </h6>
         <div class="col-sm-12">
@@ -37,7 +38,7 @@
                 <br>
                 <div class="btn-group">
                     <input type="file" name="photo" class="form-control" id="id_photo" />
-                    
+
                 </div>
             </div>
         </div><br/>
@@ -124,7 +125,7 @@
               <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
             </div>
           </div>
-          
+
           <div class="w-full lg:w-6/12 px-4">
             <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Statut (*)</label>
@@ -155,7 +156,7 @@
 <option value="F">Femme</option>
 
 </select>
-                        
+
                     </div>
                 </div>
               </label>
@@ -180,7 +181,7 @@
 
         <hr class="mt-6 border-b-1 border-blueGray-300">
 
-        
+
         <div class="flex flex-wrap">
           <div class="w-full lg:w-12/12 px-4">
             <div class="relative w-full mb-3">
@@ -190,7 +191,7 @@
              <textarea  input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" ></textarea>
             </div>
           </div>
-    
+
   <footer class="relative  pt-8 pb-6 mt-2">
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap items-center md:justify-between justify-center">
@@ -203,8 +204,13 @@
     </div>
       </div>
     </div>
+  </footer>
+        </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-</footer>
 </div>
 </section>
 </body>

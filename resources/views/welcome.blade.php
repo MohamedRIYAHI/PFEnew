@@ -52,13 +52,6 @@
                         <li role="none" class="flex items-stretch">
                             <a href="{{ url('login') }}" role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-blue-800 focus:text-blue-800 focus:outline-none focus-visible:outline-none lg:px-8"> <span>Login</span> </a>
                         </li>
-
-                                                    @if (Route::has('register'))
-
-                            <li role="none" class="flex items-stretch">
-                                <a href="{{ url('register') }}" role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-blue-800 focus:text-blue-800 focus:outline-none focus-visible:outline-none lg:px-8"> <span>Register</span> </a>
-                            </li>
-                                                    @endif
                                                 @endauth
                                         @endif
             </ul>
@@ -142,16 +135,16 @@
 
 </div>
 <div x-data="{ showLicences: true, showMasters: false }" id="formations" class="my-10 mb-4 mt-5">
-    <div class="pt-4 flex justify-between container mx-auto px-4 ">
+    <div class="pt-4 flex justify-between container mx-auto px-4">
         <button @click="showLicences = true; showMasters = false"
                 :class="{ 'bg-blue-600 text-white shadow-md hover:shadow-lg': showLicences, 'bg-blue-200 text-blue-800 hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out shadow-sm hover:scale-105': !showLicences }"
-                class="w-[420px] font-semibold py-3 px-6 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform transition-transform">
+                class="uppercase w-[420px] font-semibold py-3 px-6 border border-transparent rounded transform transition-transform" id="custom-button">
             Licences Professionnelles
         </button>
         <button @click="showMasters = true; showLicences = false"
                 :class="{ 'bg-blue-600 text-white shadow-md hover:shadow-lg': showMasters, 'bg-blue-200 text-blue-800 hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out shadow-sm hover:scale-105': !showMasters }"
-                class="w-[420px] font-semibold py-3 px-6 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform transition-transform">
-            Masters Spécialisés
+                class="uppercase w-[420px] font-semibold py-3 px-6 border border-transparent rounded transform transition-transform" id="custom-button">
+            Masters spécialisés
         </button>
     </div>
 
@@ -160,8 +153,9 @@
         <div class="flex justify-center">
             <div x-show="showLicences" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @foreach($licences as $licence)
-                    <a href="{{ route('licences', ['id' => $licence->id]) }}" class="">
-                        <div class="overflow-hidden text-center bg-gradient-to-br from-[#F1FEC6] to-blue-600 rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32">
+                    <a href="{{ route('licences', ['id' => $licence->id]) }}" class="card">
+                        <div class="blob"></div>
+                        <div class="content overflow-hidden text-center bg-gradient-to-br from-[#F1FEC6] to-blue-600 rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32 bg">
                             <div class="p-6">
                                 <h2 class="mb-4 text-xl font-medium text-blue-900">{{ $licence->nom }}</h2>
                                 <p class="text-gray-700">{{ $licence->description }}</p>
@@ -173,8 +167,9 @@
 
             <div x-show="showMasters" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @foreach($masters as $master)
-                    <a href="{{ route('masters', [$master->id]) }}">
-                    <div class="overflow-hidden text-center bg-gradient-to-br from-blue-600 to-[#F1FEC6] rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32">
+                    <a href="{{ route('masters', [$master->id]) }}" class="card">
+                        <div class="blob"></div>
+                        <div class="content overflow-hidden text-center bg-gradient-to-br from-blue-600 to-[#F1FEC6] rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32 bg">
                             <div class="p-6">
                                 <h3 class="mb-4 text-xl font-medium text-blue-900">{{ $master->nom }}</h3>
                                 <p class="text-gray-700">{{ $master->description }}</p>
@@ -186,6 +181,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="container mx-auto py-4">
     <h1 class="font-serif text-lg leading-relaxed lg:text-3xl font-extrabold text-center text-blue-700">Faculté des Sciences Aïn Chock</h1>
@@ -243,7 +239,7 @@
                                     <desc id="desc-tb03">A more detailed description of the icon</desc>
                                     <path fill="currentColor" fillRule="evenodd" d="M18.9563 7.52344C18.7526 6.91526 18.1767 6.49018 17.5166 6.51256C13.7277 6.64105 10.4346 7.72034 9.03159 8.24815C8.46409 8.46164 7.98142 8.84195 7.6475 9.35489C6.13235 11.6824 1.35143 20.1396 1.5015 33.9816C1.51112 34.8687 1.87868 35.7421 2.60293 36.3174C4.05518 37.4709 7.22566 39.6169 12.2716 41.1548C13.1338 41.4176 14.1343 41.1791 14.6848 40.3722C15.3668 39.3727 15.9633 38.1197 16.3718 37.1704C16.4818 36.9145 16.7753 36.775 17.0546 36.8566C18.8459 37.3799 21.1512 37.7795 24.0128 37.7795C26.865 37.7795 29.1613 37.3825 30.9459 36.8617C31.2254 36.7802 31.5188 36.9197 31.6289 37.1755C32.0373 38.1241 32.6329 39.3744 33.3137 40.3722C33.8643 41.1791 34.8647 41.4176 35.727 41.1548C40.7729 39.6169 43.9433 37.4709 45.3956 36.3174C46.1198 35.7421 46.4874 34.8687 46.497 33.9816C46.6459 20.2518 41.9432 11.8198 40.3884 9.41269C40.0295 8.85716 39.4986 8.45634 38.8845 8.24366C37.3835 7.72379 33.9285 6.65561 30.4846 6.51532C29.821 6.48828 29.2456 6.91631 29.0422 7.52344L28.5352 9.03687C28.4493 9.293 28.1503 9.47311 27.8343 9.41471C27.0144 9.26322 25.7164 9.09373 24.0128 9.09373C22.2989 9.09373 20.9871 9.26529 20.1611 9.41734C19.8471 9.47513 19.5502 9.29611 19.4648 9.04103L18.9563 7.52344ZM21 25C21 27.7614 18.9853 30 16.5 30C14.0147 30 12 27.7614 12 25C12 22.2386 14.0147 20 16.5 20C18.9853 20 21 22.2386 21 25ZM31.5 30C29.0147 30 27 27.7614 27 25C27 22.2386 29.0147 20 31.5 20C33.9853 20 36 22.2386 36 25C36 27.7614 33.9853 30 31.5 30Z" clipRule="evenodd" />
                                 </svg>
-                                Discrod
+                                Discord
                             </a>
                         </li>
                         <li>
