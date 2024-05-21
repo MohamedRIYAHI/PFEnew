@@ -6,26 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <title>Pré-inscription</title>
+
 </head>
 <body class="h-screen  flex items-center justify-center" style="background: #edf2f7;">
+
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css">
 
 
-<section class=" py-1 bg-blueGray-50">
+<section class=" py-1 bg-blueGray-50"  style="height: 100vh;">
 <div class="w-full lg:w-8/12 px-4 mx-auto mt-6"> 
   <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
     <div class="rounded-t bg-white mb-0 px-6 py-6"> <p>
         Tous les champs avec une Astérix (*) sont obligatoires.
-    </p> <br/>
-      <div class="text-center flex justify-between">
+       </p> <br/>
+       <div class="text-center flex justify-between">
        
         <h6 class="text-blueGray-700 text-xl font-bold">
             2. Formations académiques  
         </h6>
-        <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
-          Home
+        <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button"> <form method="GET" action="">@csrf 
+          <a href="{{ route('/') }}">
+          Accueil
+          </a>
         </button>
       </div>
     </div>
@@ -119,23 +124,16 @@
             </label>
             <div class="col-sm-12">
                 <div class="form-group">
-                    <select name="serie_bac" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required id="id_sexe" onchange="autreSerieSelected(this)">
-                        <option value="" selected>--------------</option>
-                        <option value="BAC SCIENCES AGRONOMIQUES">BAC SCIENCES AGRONOMIQUES</option>
-                        <option value="BAC SCIENCES ÉCONOMIQUES">BAC SCIENCES ÉCONOMIQUES</option>
-                        <option value="BAC TECHNIQUES DE GESTION ET COMPTABILITÉ">BAC TECHNIQUES DE GESTION ET COMPTABILITÉ</option>
-                        <option value="BAC TECHNIQUES DE GESTION ADMINISTRATIVE">BAC TECHNIQUES DE GESTION ADMINISTRATIVE</option>
-                        <option value="BAC SCIENCES DE VIE ET DE TERRE">BAC SCIENCES DE VIE ET DE TERRE</option>
-                        <option value="BAC LITTERAIRE">BAC LITTERAIRE</option>
-                        <option value="BAC SCIENCES HUMAINES">BAC SCIENCES HUMAINES</option>
-                        <option value="BAC SCIENCES MATHÉMATIQUES A">BAC SCIENCES MATHÉMATIQUES A</option>
-                        <option value="BAC SCIENCES MATHÉMATIQUES B">BAC SCIENCES MATHÉMATIQUES B</option>
-                        <option value="BAC SCIENCES PHYSIQUES CHIMIE">BAC SCIENCES PHYSIQUES CHIMIE</option>
-                        <option value="BAC SCIENCES ET TECHNOLOGIES ÉLECTRIQUES">BAC SCIENCES ET TECHNOLOGIES ÉLECTRIQUES</option>
-                        <option value="BAC SCIENCES ET TECHNOLOGIES MÉCANIQUES">BAC SCIENCES ET TECHNOLOGIES MÉCANIQUES</option>
-                        <option value="BAC ETRANGER (MISSION)">BAC ETRANGER (MISSION)</option>
-                        <option value="AUTRE">AUTRE</option>
-                    </select>
+                    <select name="serie_bac" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required id="id_serie" onchange="autreSerieSelected(this)">
+                      @php
+                        
+                      @endphp
+                      <option value="" selected>--------------</option>
+                      @foreach ($seriebacs as $seriebac)
+                        <option value="{{ $seriebac }}">{{ $seriebac }}</option>
+                        @endforeach
+                        <option value="AUTRE" >AUTRE</option>
+                      </select>
                 </div>
             </div>
         </div>
@@ -150,18 +148,18 @@
             </div>
         </div>
     </div>
-    
     <script>
+      var autreSerieField = document.getElementById("autreSerieField");
+      var autreSerieInput = document.getElementById("autre_serie_input");
         function autreSerieSelected(selectElement) {
-            var autreSerieField = document.getElementById("autreSerieField");
-            var autreSerieInput = document.getElementById("autre_serie_input");
-            if (selectElement.value === "AUTRE") {
-                autreSerieField.style.display = "block";
-                autreSerieInput.required = true;
-            } else {
-                autreSerieField.style.display = "none";
-                autreSerieInput.required = false;
-            }
+          document.getElementById
+          if (selectElement.value === "AUTRE") {
+              autreSerieField.style.display = "block";
+              autreSerieInput.required = true;
+          } else {
+              autreSerieField.style.display = "none";
+              autreSerieInput.required = false;
+          }
         }
     </script>
     
@@ -199,9 +197,9 @@
   </div>
   
   <script>
+    var autreSpecialiteField = document.getElementById("autreSpecialiteField");
+    var autreSpecialiteInput = document.getElementById("autre_specialite_input");
       function autreSpecialiteSelected(selectElement) {
-          var autreSpecialiteField = document.getElementById("autreSpecialiteField");
-          var autreSpecialiteInput = document.getElementById("autre_specialite_input");
           if (selectElement.value === "AUTRE") {
               autreSpecialiteField.style.display = "block";
               autreSpecialiteInput.required = true;
@@ -261,10 +259,10 @@
                           <label>Mention du baccalauréat (*)</label>
                           <select name="sexe" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  required id="id_sexe">
   <option value="" selected>--------------</option>
-  <option value="H">PASSABLE</option>
-  <option value="F">ASSEZ BIEN</option>
-  <option value="A"> BIEN </option>
-  <option value="B">TRÈS BIEN</option>
+  <option value="">PASSABLE</option>
+  <option value="">ASSEZ BIEN</option>
+  <option value=""> BIEN </option>
+  <option value="">TRÈS BIEN</option>
   </select>                      
                       </div>
                   </div>
@@ -280,7 +278,7 @@
                   <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
                 </div>
               
-              </div>
+              </div class='mb-2'>
                 <fieldset>
                     <legend>Votre CV</legend>
                     <form action="/upload" method="post" enctype="multipart/form-data">
@@ -290,31 +288,28 @@
       
         </div>
         </div>
-        
-        
 
-        <hr class="mt-6 border-b-1 border-blueGray-300">
-
-        
+        <hr class="m-1 mb-2 border-b-1 border-blueGray-300">
  <!-- Buttons -->
 <!-- Component: Small primary elevated button -->
-<div>
+<button onclick="window.history.back()" class="inline-flex items-center justify-center h-8 gap-2 px-4 text-xs font-medium tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-500 shadow-emerald-200 hover:bg-emerald-600 hover:shadow-sm hover:shadow-emerald-200 focus:bg-emerald-700 focus:shadow-sm focus:shadow-emerald-200 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none" >
+<div class=" flex items-center justify-between p-2">
+    <span>Précédent</span>
+  </button>
 <button class="inline-flex items-center justify-center h-8 gap-2 px-4 text-xs font-medium tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-500 shadow-emerald-200 hover:bg-emerald-600 hover:shadow-sm hover:shadow-emerald-200 focus:bg-emerald-700 focus:shadow-sm focus:shadow-emerald-200 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none" class="finish-button">
   <span>Terminer</span>
-</button></div>
+</button>
+</div>
 
 <!-- End Small primary elevated button -->
       
-
-      
-    
   <footer class="relative  pt-8 pb-6 mt-2">
    <div class="container mx-auto px-4">
     <div class="flex flex-wrap items-center md:justify-between justify-center">
       <div class="w-full md:w-6/12 px-4 mx-auto text-center">
         <div class="footer">
             <div>
-                <strong>Copyright </strong> Aptus Consulting &copy; 2019
+                <strong>Copyright </strong>FSAC  &copy; 2024
             </div>
           </div>
         </div>

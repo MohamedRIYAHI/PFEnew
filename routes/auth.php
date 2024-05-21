@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\PdfController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -16,6 +18,15 @@ Route::middleware('guest')->group(function () {
                 ->name('register');
  Route::get('test', [StaticController::class, 'test'])
                 ->name('test');
+ Route::get('test1', [StaticController::class, 'test1'])
+                ->name('test1');
+
+  Route::get('pdf', [PdfController::class, 'pdf'])
+                ->name('pdf');
+   Route::get('pdfin', [PdfController::class, 'pdfin'])
+                ->name('pdfin');
+  Route::get('test2/fin', [PdfController::class, 'fin'])
+                ->name('fin');
 
 Route::get('test2', [StaticController::class, 'test2'])
                 ->name('test2');

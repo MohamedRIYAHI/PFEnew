@@ -15,7 +15,7 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * Afficher le formulaire d'inscription.
      */
     public function create(): View
     {
@@ -23,28 +23,47 @@ class RegisteredUserController extends Controller
     }
 
     /**
-     * Handle an incoming registration request.
+     * Gérer une demande d'inscription.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+        $validatedData = $request->validate([
+            'nom' => ['required', 'string', 'max:255'],
+            'nom_arabe' => ['required', 'string', 'max:255'],
+            'prenom' => ['required', 'string', 'max:255'],
+            'prenom_arabe' => ['required', 'string', 'max:255'],
+            'lieu_naissance' => ['required', 'string', 'max:255'],
+            'lieu_naissance_arabe' => ['required', 'string', 'max:255'],
+            'date_naissance' => ['required', 'date'],
+            'phone' => ['required', 'string', 'max:255'],
+            'sexe' => ['required', 'string', 'max:255'],
+            'cin' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'nom' => $validatedData['nom'],
+            'nom_arabe' => $validatedData['nom_arabe'],
+            'prenom' => $validatedData['prenom'],
+            'prenom_arabe' => $validatedData['prenom_arabe'],
+            'lieu_naissance' => $validatedData['lieu_naissance'],
+            'lieu_naissance_arabe' => $validatedData['lieu_naissance_arabe'],
+            'date_naissance' => $validatedData['date_naissance'],
+            'phone' => $validatedData['phone'],
+            'sexe' => $validatedData['sexe'],
+            'cin' => $validatedData['cin'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect()->route('dashboard');
     }
+    
 }

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use app\Http\Controllers\StaticController;
+use App\Models\Threads;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Cmgmyr\Messenger\Models\Thread;
-use Cmgmyr\Messenger\Models\Message;
+use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use Cmgmyr\Messenger\Models\Participant;
+use App\Models\Participant;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MessagerieController extends Controller
@@ -21,7 +22,7 @@ class MessagerieController extends Controller
      */
     public function index()
     {
-        $threads = Thread::forUser(Auth::id())
+        $threads = Threads::forUser(Auth::id())
             ->withCount('messages')
             ->latest()
             ->get()
