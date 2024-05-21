@@ -85,39 +85,39 @@ Route::get('/licences/{id}', function ($id) {
             return view('licences.IM');
         case 2:
             return view('licences.ESE');
-        case 5:
+        case 3:
             return view('licences.GA');
-        case 7:
+        case 4:
             $file = public_path('GC.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',
             ];
             return Response::download($file, 'GC.pdf', $headers);
-        case 8:
+        case 5:
             $file = public_path('GALMU.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',
             ];
             return Response::download($file, 'GALMU.pdf', $headers);
-        case 12:
+        case 6:
             $file = public_path('MSI.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',
             ];
             return Response::download($file, 'MSI.pdf', $headers);
-        case 13:
+        case 7:
             $file = public_path('EAI.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',
             ];
             return Response::download($file, 'EAI.pdf', $headers);
-        case 18:
+        case 8:
             $file = public_path('TMBTP.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',
             ];
             return Response::download($file, 'TMBTP.pdf', $headers);
-        case 19:
+        case 9:
             return view('licences.BAM');
         default:
             abort(404);
@@ -127,31 +127,31 @@ Route::get('/licences/{id}', function ($id) {
 // Define routes for masters
 Route::get('/masters/{id}', function ($id) {
     switch ($id) {
-        case 3:
+        case 10:
+            return view('masters.GL');
+        case 11:
+            return view('masters.EEAII');
+        case 12:
+            return view('masters.SDGLR');
+        case 13:
             $file = public_path('BD2C.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',
             ];
             return Response::download($file, 'BD2C.pdf', $headers);
-        case 4:
-            return view('masters.EEAII');
-        case 6:
+        case 14:
             $file = public_path('ERSE.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',
             ];
             return Response::download($file, 'ERSE.pdf', $headers);
-        case 9:
-            return view('masters.GL');
-        case 10:
-            return view('masters.SDGLR');
-        case 11:
+        case 15:
             $file = public_path('MSM.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',
             ];
             return Response::download($file, 'MSM.pdf', $headers);
-        case 20:
+        case 16:
             $file = public_path('SIGGT.pdf');
             $headers = [
                 'Content-Type' => 'application/pdf',

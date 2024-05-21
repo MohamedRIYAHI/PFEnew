@@ -52,13 +52,6 @@
                         <li role="none" class="flex items-stretch">
                             <a href="{{ url('login') }}" role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-blue-800 focus:text-blue-800 focus:outline-none focus-visible:outline-none lg:px-8"> <span>Se connecter</span> </a>
                         </li>
-
-                                                    @if (Route::has('register'))
-
-                            <li role="none" class="flex items-stretch">
-                                <a href="{{ url('register') }}" role="menuitem" aria-haspopup="false" class="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-blue-800 focus:text-blue-800 focus:outline-none focus-visible:outline-none lg:px-8"> <span>Register</span> </a>
-                            </li>
-                                                    @endif
                                                 @endauth
                                         @endif
             </ul>
@@ -142,16 +135,16 @@
 
 </div>
 <div x-data="{ showLicences: true, showMasters: false }" id="formations" class="my-10 mb-4 mt-5">
-    <div class="pt-4 flex justify-between container mx-auto px-4 ">
+    <div class="pt-4 flex justify-between container mx-auto px-4">
         <button @click="showLicences = true; showMasters = false"
                 :class="{ 'bg-blue-600 text-white shadow-md hover:shadow-lg': showLicences, 'bg-blue-200 text-blue-800 hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out shadow-sm hover:scale-105': !showLicences }"
-                class="w-[420px] font-semibold py-3 px-6 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform transition-transform">
+                class="uppercase w-[420px] font-semibold py-3 px-6 border border-transparent rounded transform transition-transform" id="custom-button">
             Licences Professionnelles
         </button>
         <button @click="showMasters = true; showLicences = false"
                 :class="{ 'bg-blue-600 text-white shadow-md hover:shadow-lg': showMasters, 'bg-blue-200 text-blue-800 hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out shadow-sm hover:scale-105': !showMasters }"
-                class="w-[420px] font-semibold py-3 px-6 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform transition-transform">
-            Masters Spécialisés
+                class="uppercase w-[420px] font-semibold py-3 px-6 border border-transparent rounded transform transition-transform" id="custom-button">
+            Masters spécialisés
         </button>
     </div>
 
@@ -160,8 +153,9 @@
         <div class="flex justify-center">
             <div x-show="showLicences" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @foreach($licences as $licence)
-                    <a href="{{ route('licences', ['id' => $licence->id]) }}" class="">
-                        <div class="overflow-hidden text-center bg-gradient-to-br from-[#F1FEC6] to-blue-600 rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32">
+                    <a href="{{ route('licences', ['id' => $licence->id]) }}" class="card">
+                        <div class="blob"></div>
+                        <div class="content overflow-hidden text-center bg-gradient-to-br from-[#F1FEC6] to-blue-600 rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32 bg">
                             <div class="p-6">
                                 <h2 class="mb-4 text-xl font-medium text-blue-900">{{ $licence->nom }}</h2>
                                 <p class="text-gray-700">{{ $licence->description }}</p>
@@ -173,8 +167,9 @@
 
             <div x-show="showMasters" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @foreach($masters as $master)
-                    <a href="{{ route('masters', [$master->id]) }}">
-                    <div class="overflow-hidden text-center bg-gradient-to-br from-blue-600 to-[#F1FEC6] rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32">
+                    <a href="{{ route('masters', [$master->id]) }}" class="card">
+                        <div class="blob"></div>
+                        <div class="content overflow-hidden text-center bg-gradient-to-br from-blue-600 to-[#F1FEC6] rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32 bg">
                             <div class="p-6">
                                 <h3 class="mb-4 text-xl font-medium text-blue-900">{{ $master->nom }}</h3>
                                 <p class="text-gray-700">{{ $master->description }}</p>
@@ -186,6 +181,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="container mx-auto py-4">
     <h1 class="font-serif text-lg leading-relaxed lg:text-3xl font-extrabold text-center text-blue-700">Faculté des Sciences Aïn Chock</h1>
