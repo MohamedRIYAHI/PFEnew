@@ -22,11 +22,11 @@ return new class extends Migration
             $table->string('password');
             $table->string('cin');
             $table->string('phone');
-            $table->text('photo')->nullable()->default('profile.jpg');
+            $table->text('photo')->nullable();
             $table->enum('sexe',['homme','femme'])->default('homme');
             $table->date('date_naissance');
             $table->string('lieu_naissance');
-            $table->string('lieu_naissance_arabe');
+            $table->string('role')->default('candidat');
             $table->rememberToken();
             $table->timestamps();
         });

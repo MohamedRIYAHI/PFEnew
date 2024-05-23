@@ -49,11 +49,13 @@ Route::get('/dashboard', function () {
     Route::get('/candidats/', [CandidatController::class, 'index'])->name('candidats.index');
 
     Route::get('/consultations/', [ConsultationController::class, 'index'])->name('consultations.index');
-    Route::get('/consultations/create', [ConsultationController::class, 'create'])->name('consultations.create');
-    Route::post('/consultations/', [ConsultationController::class, 'store'])->name('consultations.store');
-    Route::get('/consultations/edit/{chef}', [ConsultationController::class, 'edit'])->name('consultations.edit');
-    Route::put('/consultations/{chef}', [ConsultationController::class, 'update'])->name('consultations.update');
-    Route::delete('/consultations/{chef}', [ConsultationController::class, 'destroy'])->name('consultations.destroy');
+    Route::post('/consultations/{candidat}/{filiere}', [ConsultationController::class, 'store'])->name('consultations.store');
+    Route::get('/consultations/edit/{consultation}', [ConsultationController::class, 'edit'])->name('consultations.edit');
+    Route::get('/consultations/show/{consultation}', [ConsultationController::class, 'show'])->name('consultations.show');
+    Route::put('/consultations/valider/{consultation}', [ConsultationController::class, 'valider'])->name('consultations.valider');
+    Route::put('/consultations/rejeter/{consultation}', [ConsultationController::class, 'rejeter'])->name('consultations.rejeter');
+    Route::put('/consultations/{consultation}', [ConsultationController::class, 'update'])->name('consultations.update');
+    Route::delete('/consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('consultations.destroy');
 
 
 
@@ -65,10 +67,7 @@ Route::get('/dashboard', function () {
     Route::put('{thread}', [MessagerieController::class, 'update'])->name('.update');
     Route::delete('{thread}', [MessagerieController::class, 'destroy'])->name('.destroy');
 });
-    route::get('/test',[StaticController::class,'formulaire']);
-    route::get('/fsjes',[StaticController::class,'fsjes'])->name('fsjes');
-     route::get('/test2',[StaticController::class,'test2'])->name('test2');
-     route::get('/test',[StaticController::class,'test'])->name('test');
+
      route::get('/pdf',[PdfController::class,'pdf'])->name('pdf');
      route::get('/test2/fin',[PdfController::class,'fin'])->name('fin');
      route::get('/pdfin',[PdfController::class,'pdfin'])->name('pdfin');

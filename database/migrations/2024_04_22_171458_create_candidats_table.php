@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('candidats', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('serie_bac')->constrained('seriebac');
-            $table->date('annee_bac');
+//            $table->foreignId('serie_bac')->constrained('seriebac');
+            $table->string('serie_bac');
+            $table->string('status');
+            $table->string('annee_bac');
             $table->integer('moyenne_bac');
             $table->string('montion_bac');
             $table->string('dernier_diplome');
-            $table->date('annee_diplome');
+            $table->string('annee_diplome');
             $table->string('specialite');
             $table->string('nom_etab');
             $table->text('cv');

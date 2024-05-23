@@ -9,10 +9,11 @@ class Candidat extends Model
 {
     protected $fillable=[
         'user_id',
+        'status',
         'serie_bac',
         'annee_bac',
         'moyenne_bac',
-        'motion_bac',
+        'montion_bac',
         'dernier_diplome',
         'annee_diplome',
         'specialite',
