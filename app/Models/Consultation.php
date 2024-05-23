@@ -18,4 +18,9 @@ class Consultation extends Model
     {
         return $this->belongsTo(Candidat::class);
     }
+
+    public function filiere()
+    {
+        return $this->belongsTo(Filiere::class);
+    }
 }
