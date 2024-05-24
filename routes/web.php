@@ -15,10 +15,10 @@ use App\Models\Filiere;
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () {
     $licences = Filiere::where('type', 'licence')->get();
     $masters = Filiere::where('type', 'master')->get();
+
 
     return view('welcome',compact('licences','masters'));
 })->name('/');

@@ -24,15 +24,27 @@
 <header class="titre">
     <h1>PRÉ-INSCRIPTION</h1>
 </header>
+
 <div class="flex space-x-4 py-10">
     <div class="w-1/2 bg-transparent items-center justify-center flex border-2 border-sky-500 shadow-lg hover:bg-sky-500 text-sky-500 hover:text-white duration-300 cursor-pointer active:scale-[0.98]">
-        <button class="px-10 py-4"><a class="uppercase font-serif text-xl" href="http://pfe1.test/register">PRÉ-INSCRIPTION EN LIGNE</a></button>
+        {{--        if the auth have role candidat--}}
+        @if(auth()->check() && Auth::user()->role === "candidat")
+            <form action="{{ route("consultations.store",['candidat' => auth()->id(), 'filiere' => "Génie Logistique (GL)"]) }}" method="POST">
+                @csrf
+                <button class="px-10 py-4"><a class="uppercase font-serif text-xl" >ENVOYER UNE DEMANDE</a></button>
+            </form>
+        @endif
+        @if(auth()->check())
+            <a class="uppercase font-serif text-xl" href="{{ url('/') }}">PRÉ-INSCRIPTION EN LIGNE</a>
+        @endif
+        @if(!auth()->check())
+            <a class="uppercase font-serif text-xl" href="{{ url('register') }}">PRÉ-INSCRIPTION EN LIGNE</a>
+        @endif
     </div>
     <div class="w-1/2 bg-transparent items-center justify-center flex border-2 border-sky-500 shadow-lg hover:bg-sky-500 text-sky-500 hover:text-white duration-300 cursor-pointer active:scale-[0.98]">
-        <button class="px-10 py-4"><a class="uppercase font-serif text-xl" href="#">COûT DE LA FORMATION : 30.000 DH</a></button>
+        <button class="px-10 py-4"><a class="uppercase font-serif text-xl" href="#">COûT DE LA FORMATION : 25.000 DH</a></button>
     </div>
 </div>
-
 <div class="all">
     <header class="titre">
         <h1 class="font-serif">OBJECTIFS</h1>
