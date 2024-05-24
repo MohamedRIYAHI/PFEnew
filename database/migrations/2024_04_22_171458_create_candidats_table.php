@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('moyenne_bac');
             $table->string('montion_bac');
             $table->string('dernier_diplome');
-            $table->date('annee_diplome');
+            $table->string('annee_diplome');
             $table->string('specialite');
             $table->string('nom_etab');
             $table->text('cv');

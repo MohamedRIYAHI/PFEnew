@@ -2,15 +2,14 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Cmgmyr\Messenger\Traits\Messagable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Cmgmyr\Messenger\Traits\Messagable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable,Messagable;
 
 
     /**
@@ -18,9 +17,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>*
      */
-    
+
     protected $table= 'users';
-    
+
      protected $fillable = [
         'nom',
         'nom_arabe',
@@ -37,7 +36,6 @@ class User extends Authenticatable
         'sexe',
         'date_naissance',
         'lieu_naissance',
-        'lieu_naissance_arabe',
     ];
 
     /**

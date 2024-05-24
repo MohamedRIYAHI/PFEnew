@@ -8,48 +8,59 @@
     <title>Centre de Formation Continue</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
-<body>
+<body class="font-serif">
 <header class=" font-serif relative z-20 w-full border-b shadow-lg border-b-1 border-slate-200 bg-white/90 shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
     <div class="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
         @include('layouts.navigation')
 
     </div>
 </header>
-<body class="bg-[#dcdcdc]">
-<div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
-        <div class="col-span-1 lg:col-span-3">
-            <img src="soukri.jpg" class="w-full border border-gray-300 rounded-lg" alt="Photo du Doyen">
-            <p class="font-serif text-center text-xl font-bold mt-4">Pr.SOUKRI Abdelaziz</p>
-            <img src="FSAC_mini.png" class="mx-auto block mt-4" alt="FSAC">
-        </div>
-        <div class="col-span-1 lg:col-span-9">
-            <h1 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">Le mot du Doyen</h1>
-            <p class="font-serif text-base lg:text-lg text-gray-700 leading-relaxed">
-                Pr.SOUKRI Abdelaziz
-              <p>Située dans la région Casablanca-Settat et appartenant à l’Université Hassan II de Casablanca l’une des prestigieuses universités marocaines,la Faculté des Sciences Aïn Chock (FSAC) est une entité motrice du savoir, de la recherche, de la créativité et de l’innovation.</p>
-              <p>Depuis sa création en 1981 différentes équipes décanales, personnels de l’administration et des services, chefs des départements et corps professoral ont consolidé les acquis, renouvelé les filières et les formations, innové dans l'enseignement et la pédagogie, élevé le niveau de la recherche et amélioré les infrastructures.</p>
-              <p>Notre ambition majeure est de servir notre faculté, notre université et notre pays auxquels nous sommes fortement attachés pour faire face aux nombreux défis du 21ème siècle.</p>
-              <p>Sachant que les défis qui se dressent devant nous sont de taille, je suis très confiant pour l’avenir. La FSAC possède un potentiel de développement extraordinaire notamment grâce à ses programmes de formation d’une grande pertinence et de ses domaines de recherche diversifiés. Mais par-dessus tout, ce qui alimente le plus ma confiance, c’est sa communauté, qui a contribué de façon exemplaire à faire de la FSAC ce qu’elle est devenue aujourd’hui. Ainsi, je m’engage à poursuivre sur cette lancée et à stimuler encore davantage le sentiment de fierté et d’appartenance qui nous anime déjà et qui nous aidera à aller encore plus loin.</p>
-              <p>Notre projet de développement, pour ce mandat 2023-2027, prévoit sur le plan pédagogique de garantir une formation intégrale à vocation d’excellence et d’internationalisation ; formation qui permet l’acquisition de connaissances et de compétences, permettant le développement de la pensée critique et promouvant des valeurs éthiques solidaires et inclusives, et surtout une formation qui assure à nos lauréats les meilleures perspectives d’insertion dans le marché de l’emploi.</p>
-              <p>Dans le domaine de la recherche scientifique, la qualité continuera à être encouragée et la valorisation de la recherche occupera une place importante (brevets, contrats, incubation d’entreprise), nous encouragerons également la recherche appliquée qui assure la compétitivité de notre économie par la promotion de l’innovation.</p>
-              <p>L’étudiant, point focal de toute activité au sein de la FSAC, doit être considéré non seulement en tant que formé, accueilli dans de bonnes conditions et bénéficiant d’un cadre de vie amélioré et vivant, mais aussi en tant que participant actif au fonctionnement de son établissement.</p>
-              <p>Nous veillerons à ce que de la FSAC soit un cadre de vie quotidien de l’étudiant, un lieu d’échange, de dialogue et de culture au sein duquel il peut s’épanouir, s’exprimer, développer ses talents, varier ses loisirs et façonner son futur.</p>
-              <p>En conclusion, même s’il est généralement admis que le changement peut être difficile, je m’engage à gérer ce changement de façon stratégique et à poursuivre le travail des collègues qui m’ont précédé dans cette responsabilité. Je suis sûr qu’avec le soutien de tous, nous pourrons surmonter et faire face à tous les défis pour une Faculté des Sciences Aïn Chock synonyme d’engagement, de sérieux, de respect et de qualité.</p>
-            </p>
-            <img src="cita.jpg" class="float-right mt-4" alt="Signature">
-        </div>
+
+<div class="flex justify-center">
+    <div style="width: 400px; height: 400px;" class="">
+        <canvas id="Conultation"></canvas>
     </div>
+
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('Conultation').getContext('2d');
+    var servicesChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Not Validated', 'Validated', 'Rejected'],
+            datasets: [{
+                data: [@json($notValidated) , @json($validated), @json($rejected)],
+                backgroundColor: [
+                    'rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'
+                ],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Percentage of Consultations'
+                }
+            }
+        }
+    });
+
+
+</script>
 
 <!-- Component: Primary Dark Theme Footer -->
 <footer class="w-full text-blue-200 mt-5">
     <!-- Main footer -->
-    <div class="pt-4 pb-2 text-sm border-t border-blue-600 bg_bleufsac grisfsac">
+    <div class="pt-4 pb-2 text-sm border-t border-blue-600 bg-blue-600">
         <div class="container px-6 mx-auto">
             <div class="flex justify-between">
-                <nav class="col-span-2 md:col-span-4 lg:col-span-3 w-[300px] " aria-labelledby="footer-header">
+                <nav class="col-span-2 md:col-span-4 lg:col-span-3 w-[300px]" aria-labelledby="footer-header">
                     <h3 class="text-xl font-bold mb-2">À PROPOS DE CETTE PAGE</h3>
                     <p>Cette page est dédiée au Centre de Formation Continue de la Faculté Hassan 2 des Sciences Aïn Chock de Casablanca.</p>
                     <p>Elle offre des informations détaillées sur les programmes de formation continue disponibles, ainsi que des détails sur les licences professionnelles et les masters spécialisés proposés par notre institution.</p>
@@ -58,7 +69,7 @@
                     <h3 class="text-xl font-bold mb-2" id="footer-header">SUIVEZ-NOUS</h3>
                     <ul>
                         <li>
-                            <a href="https://web.facebook.com/FSAC2020/?_rdc=1&_rdr" target="_blank" class="text-blue-300 hover:text-blue-200 grisfsac">
+                            <a href="https://web.facebook.com/FSAC2020/?_rdc=1&_rdr" target="_blank" class="text-blue-300 hover:text-blue-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb01 desc-tb01">
                                     <title id="title-tb01">Icon title</title>
                                     <desc id="desc-tb01">A more detailed description of the icon</desc>
@@ -68,7 +79,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac" >
+                            <a href="#" class="text-blue-300 hover:text-blue-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb02 desc-tb02">
                                     <title id="title-tb02">Icon title</title>
                                     <desc id="desc-tb02">A more detailed description of the icon</desc>
@@ -78,7 +89,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac">
+                            <a href="#" class="text-blue-300 hover:text-blue-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb03 desc-tb03">
                                     <title id="title-tb03">Icon title</title>
                                     <desc id="desc-tb03">A more detailed description of the icon</desc>
@@ -88,7 +99,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac">
+                            <a href="#" class="text-blue-300 hover:text-blue-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-instagram desc-instagram">
                                     <title id="title-instagram">Icon title</title>
                                     <desc id="desc-instagram">A more detailed description of the icon</desc>
@@ -106,31 +117,31 @@
                         <h3 class="text-xl font-bold mb-2">LIENS RAPIDES</h3>
                         <ul>
                             <li class="mb-4">
-                                <a href="#" class="flex items-center text-blue-300 hover:text-blue-200 grisfsac">
+                                <a href="#" class="flex items-center text-blue-300 hover:text-blue-200">
                                     <i class="fas fa-home mr-2"></i>
                                     <span class="font-bold">ACCUEIL</span>
                                 </a>
-                                <a href="#formations" class="flex items-center text-blue-300 hover:text-blue-200 grisfsac">
+                                <a href="#formations" class="flex items-center text-blue-300 hover:text-blue-200">
                                     <i class="fas fa-graduation-cap mr-2"></i>
                                     <span class="font-bold">PROGRAMMES</span>
                                 </a>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200">
                                     <i class="fas fa-user-graduate mr-2 mt-1"></i>
                                     <div>
                                         <a target="_blank" href="https://www.bing.com/search?pglt=43&q=Km+8+Route+d%27El+Jadida%2C+B.P+5366+Maarif+Casablanca+20100+Maroc&cvid=a5175137930146f4a7d9cae42c83e346&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDE4ODJqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531">
-                                        <span class="font-bold">ADRESSE</span>
-                                        <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
+                                            <span class="font-bold">ADRESSE</span>
+                                            <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200">
                                     <i class="fas fa-envelope mr-2 mt-1"></i>
                                     <div>
                                         <span class="font-bold">TÉLÉPHONE</span>
                                         <span class="block"> +212 5 22 23 06 80 / 84</span>
                                     </div>
                                 </div>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200">
                                     <i class="fas fa-fax mr-2 mt-1"></i>
                                     <div>
                                         <span class="font-bold">FAX</span>
@@ -147,13 +158,5 @@
         </div>
     </div>
 </footer>
-</body>
-
-<!-- End Three and Nine uneven columns layout -->
-
-
-
-
-
 </body>
 </html>
