@@ -64,33 +64,7 @@
         <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     </div>
 </div>
-<div class="grid grid-cols-1 pt-4 ">
-    <div>
-        <h2 class="font-bold text-3xl text-center mb-8 ">Bienvenue sur le Portail de Formation Continue de la Faculté Hassan 2 des Sciences Aïn Chock de Casablanca !</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pl-4 pr-4">
-        <div>
-            <p class="font-serif text-lg leading-relaxed text-gray-800">
-                À l'Université Faculté Hassan 2 des Sciences, nous comprenons parfaitement l'importance cruciale de rester compétitif dans un monde en constante évolution. C'est pourquoi nous nous engageons à vous offrir une gamme complète de programmes de formation continue, soigneusement conçus pour répondre aux besoins spécifiques des professionnels d'aujourd'hui.
 
-                Nos programmes de formation continue sont élaborés et dispensés par des professeurs renommés et des praticiens chevronnés, garantissant ainsi une combinaison idéale entre théorie et pratique. Vous bénéficierez de l'expertise académique de notre institution de premier plan, ainsi que des conseils avisés de professionnels expérimentés dans votre domaine.
-            </p>
-        </div>
-        <div>
-            <p class="font-serif text-lg leading-relaxed text-gray-800">
-                Que vous soyez en quête de perfectionnement professionnel, de mise à jour de vos compétences ou de changement de carrière, notre plateforme vous offre l'opportunité de poursuivre votre développement professionnel de manière flexible et adaptée à votre emploi du temps.
-
-                Explorez nos programmes variés et choisissez celui qui correspond le mieux à vos objectifs et aspirations professionnelles. Nous sommes là pour vous accompagner à chaque étape de votre parcours de formation continue et vous aider à atteindre vos ambitions professionnelles.
-            </p>
-            <p>
-                <a class="font-serif text-lg leading-relaxed text-blue-900" href="http://pfe1.test/register">
-                    Rejoignez-nous dès aujourd'hui et engagez-vous sur la voie de l'excellence professionnelle avec la Faculté Hassan 2 des Sciences Aïn Chock de Casablanca !
-                </a>
-            </p>
-        </div>
-    </div>
-
-</div>
 <div x-data="{ showLicences: true, showMasters: false }" id="formations" class="my-10 mb-4 mt-5">
     <div class="pt-4 flex justify-between container mx-auto px-4">
         <button @click="showLicences = true; showMasters = false"
@@ -140,28 +114,15 @@
 </div>
 
 
-<div class="container mx-auto py-4">
-    <h1 class="font-serif text-lg leading-relaxed lg:text-3xl font-extrabold text-center text-blue-700">Faculté des Sciences Aïn Chock</h1>
-    <div class="font-serif text-lg  text-gray-800 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex flex-wrap">
-            <img src="{{ asset('qq.jpeg') }}" alt="" class="w-full h-auto rounded-lg shadow-lg object-contain">
-            <div class="bg-white p-8 rounded-lg shadow-lg py-20">
-                <p class="font-roboto text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700">La Faculté des sciences Aïn-Chock de Casablanca (FSAC) fait partie de l’Université Hassan II Casablanca. Elle a été créée en 1981 et comprend cinq départements d’enseignement et de recherche dans les domaines suivants : Mathématiques, Informatique, Physique, Chimie, Biologie et Géologie.</p>
 
-                <p class="font-roboto text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700">La Faculté des Sciences Aïn Chock est un établissement à accès ouvert à tous les bacheliers scientifiques de sa carte scolaire, les formations et l’évaluation sont organisées selon le système LMD (Licence. Master, Doctorat).</p>
-
-                <p class="font-roboto text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700">Les diplômes délivrés sont : La licence fondamentale ou la licence professionnelle ; le Master ou le Master spécialisé et le Doctorat.</p>
-
-                <p class="font-roboto text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700">La FSAC a également une offre de formation continue qui s’adresse à des salariés souhaitant préparer un Diplôme d’Université ou suivre une formation qualifiante afin de se perfectionner ou de se réorienter professionnellement.</p>
-            </div>
-    </div>
-</div>
+<!-- Component: Primary Dark Theme Footer -->
 <!-- Component: Primary Dark Theme Footer -->
 <footer class="w-full text-blue-200 mt-5">
     <!-- Main footer -->
-    <div class="pt-4 pb-2 text-sm border-t border-blue-600 bg-blue-600">
+    <div class="pt-4 pb-2 text-sm border-t border-blue-600 bg_bleufsac grisfsac">
         <div class="container px-6 mx-auto">
             <div class="flex justify-between">
-                <nav class="col-span-2 md:col-span-4 lg:col-span-3 w-[300px]" aria-labelledby="footer-header">
+                <nav class="col-span-2 md:col-span-4 lg:col-span-3 w-[300px] " aria-labelledby="footer-header">
                     <h3 class="text-xl font-bold mb-2">À PROPOS DE CETTE PAGE</h3>
                     <p>Cette page est dédiée au Centre de Formation Continue de la Faculté Hassan 2 des Sciences Aïn Chock de Casablanca.</p>
                     <p>Elle offre des informations détaillées sur les programmes de formation continue disponibles, ainsi que des détails sur les licences professionnelles et les masters spécialisés proposés par notre institution.</p>
@@ -170,7 +131,7 @@
                     <h3 class="text-xl font-bold mb-2" id="footer-header">SUIVEZ-NOUS</h3>
                     <ul>
                         <li>
-                            <a href="https://web.facebook.com/FSAC2020/?_rdc=1&_rdr" target="_blank" class="text-blue-300 hover:text-blue-200">
+                            <a href="https://web.facebook.com/FSAC2020/?_rdc=1&_rdr" target="_blank" class="text-blue-300 hover:text-blue-200 grisfsac">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb01 desc-tb01">
                                     <title id="title-tb01">Icon title</title>
                                     <desc id="desc-tb01">A more detailed description of the icon</desc>
@@ -180,7 +141,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200">
+                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac" >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb02 desc-tb02">
                                     <title id="title-tb02">Icon title</title>
                                     <desc id="desc-tb02">A more detailed description of the icon</desc>
@@ -190,7 +151,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200">
+                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb03 desc-tb03">
                                     <title id="title-tb03">Icon title</title>
                                     <desc id="desc-tb03">A more detailed description of the icon</desc>
@@ -200,7 +161,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200">
+                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-instagram desc-instagram">
                                     <title id="title-instagram">Icon title</title>
                                     <desc id="desc-instagram">A more detailed description of the icon</desc>
@@ -218,31 +179,31 @@
                         <h3 class="text-xl font-bold mb-2">LIENS RAPIDES</h3>
                         <ul>
                             <li class="mb-4">
-                                <a href="#" class="flex items-center text-blue-300 hover:text-blue-200">
+                                <a href="#" class="flex items-center text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-home mr-2"></i>
                                     <span class="font-bold">ACCUEIL</span>
                                 </a>
-                                <a href="#formations" class="flex items-center text-blue-300 hover:text-blue-200">
+                                <a href="#formations" class="flex items-center text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-graduation-cap mr-2"></i>
                                     <span class="font-bold">PROGRAMMES</span>
                                 </a>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-user-graduate mr-2 mt-1"></i>
                                     <div>
                                         <a target="_blank" href="https://www.bing.com/search?pglt=43&q=Km+8+Route+d%27El+Jadida%2C+B.P+5366+Maarif+Casablanca+20100+Maroc&cvid=a5175137930146f4a7d9cae42c83e346&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDE4ODJqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531">
-                                        <span class="font-bold">ADRESSE</span>
-                                        <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
+                                            <span class="font-bold">ADRESSE</span>
+                                            <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-envelope mr-2 mt-1"></i>
                                     <div>
                                         <span class="font-bold">TÉLÉPHONE</span>
                                         <span class="block"> +212 5 22 23 06 80 / 84</span>
                                     </div>
                                 </div>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-fax mr-2 mt-1"></i>
                                     <div>
                                         <span class="font-bold">FAX</span>

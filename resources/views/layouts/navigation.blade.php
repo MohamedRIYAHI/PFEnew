@@ -2,11 +2,11 @@
     <!-- Brand logo -->
     <a id="Centre" aria-label="WindUI logo" aria-current="page" class="flex items-center gap-2 py-3 text-lg whitespace-nowrap focus:outline-none lg:flex-1" href="javascript:void(0)">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px"
+             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="150px"
              viewBox="0 0 267 300" enable-background="new 0 0 267 300" xml:space="preserve">
                             <x-application-logo class="block w-auto text-gray-800 fill-current h-9" />
                         </svg>
-        𝔽𝕊𝔸ℂ - ℂ𝕖𝕟𝕥𝕣𝕖 𝕕𝕖 𝔽𝕠𝕣𝕞𝕒𝕥𝕚𝕠𝕟 ℂ𝕠𝕟𝕥𝕚𝕟𝕦𝕖
+        <b>Centre de Formation Continue - FSAC Ain Chock</b>
     </a>
     <!-- Mobile trigger -->
     <button class="relative self-center order-10 block w-10 h-10 lg:hidden" aria-expanded="false" aria-label="Toggle navigation">
