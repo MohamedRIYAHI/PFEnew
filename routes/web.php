@@ -33,6 +33,7 @@ Route::get('/dashboard', function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/chefs/', [ChefController::class, 'index'])->name('chefs.index');
+    Route::get('/chefs/dashboard', [ChefController::class, 'dashboard'])->name('chefs.dashboard');
     Route::get('/chefs/create', [ChefController::class, 'create'])->name('chefs.create');
     Route::post('/chefs/', [ChefController::class, 'store'])->name('chefs.store');
     Route::get('/chefs/edit/{chef}', [ChefController::class, 'edit'])->name('chefs.edit');

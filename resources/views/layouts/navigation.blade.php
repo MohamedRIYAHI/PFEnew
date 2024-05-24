@@ -56,7 +56,15 @@
                             <x-dropdown-link :href="route('consultations.index')">
                                 {{ __('Liste des Consultations') }}
                             </x-dropdown-link>
-
+                            <x-dropdown-link :href="route('messages')"
+                                        :active="request()->routeIs('messages') || request()->routeIs('messages.*')">
+                                Messages @include('messenger.unread-count')
+                            </x-dropdown-link>
+                            @if(Auth::user()->role == 'chef_filiere')
+                                <x-dropdown-link :href="route('chefs.dashboard')">
+                                    {{ __('Dashboard') }}
+                                </x-dropdown-link>
+                            @endif
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
