@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css">
 
-
+<form action="" method="POST">
 <section class=" py-1 bg-blueGray-50"  style="height: 100vh;">
 <div class="w-full lg:w-8/12 px-4 mx-auto mt-6"> 
   <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
@@ -46,7 +46,7 @@
                     <img src="prfl.png" id="img" alt="image" style=" max-width: 90px;max-height: 100px;margin-bottom:5px">
                 <br>
                 <div class="btn-group">
-                    <input type="file" name="photo" class="form-control" id="id_photo" />
+                    <input type="file" name="photo" class="form-control" id="id_photo"  />
 
                 </div>
             </div>
@@ -58,7 +58,7 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 Nom(*)
               </label>
-              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required >
+              <input type="text" name="nom" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required >
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -66,7 +66,7 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 الإسم العائلي (*)
               </label>
-              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
+              <input type="text" name="nom_arabe" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
             </div>
           </div>
           <div class="flex flex-wrap">
@@ -75,7 +75,7 @@
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                   Prénom(*)
                 </label>
-                <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required >
+                <input type="text" name="prenom" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required >
               </div>
             </div>
             <div class="w-full lg:w-6/12 px-4">
@@ -83,7 +83,7 @@
                   <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     الإسم الشخصي (*)
                   </label>
-                  <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required >
+                  <input type="text" name="prenom_arabe" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required >
                 </div>
               </div>
             <div class="flex flex-wrap">
@@ -93,7 +93,7 @@
                 <div class="container mt-5">
                     <div class="form-group">
                         <label for="datePicker">Date de naissance (*) :</label>
-                        <input type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  id="datePicker" placeholder="Cliquez pour choisir une date" required>
+                        <input type="date" name="date_naissance" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  id="datePicker" placeholder="Cliquez pour choisir une date" required>
                         <div id="ageError" class="text-red-500 text-xs mt-1" style="display: none;">Vous devez avoir plus de 21 ans.</div>
                   </div>
                 </div> 
@@ -132,7 +132,7 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 Lieu de Naissance(*)
               </label>
-              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required >
+              <input type="text" name="lieu_naissance" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required >
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -140,15 +140,15 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                 CIN(*)
               </label>
-              <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
+              <input type="text" name="cin" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
             <div class="relative w-full mb-3">
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                Telephone portable(*)
+                CNE(*)
               </label>
-              <input type="tel" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  id="telephone" name="telephone" pattern="[0-9]{10}" required >
+              <input type="text" name="cne" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  id="cne" required >
             </div>
           </div>
 
@@ -179,64 +179,43 @@
 <option value="H">Homme</option>
 <option value="F">Femme</option>
 </select>                   
-
 </select>
-
                     </div>
                 </div>
               </label>
             </div>
           </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3">
-              <label for="email1" class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                Adresse Email (*)
-              </label>
-              <input type="email" id="email1" oninput="compareEmails()" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  >
-            </div>
+         
+        </div></div>
+        <div class="w-full lg:w-6/12 px-4">
+          <div class="relative w-full mb-3">
+            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+              Telephone portable(*)
+            </label>
+            <input type="tel" name="phone" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  id="phone"  pattern="[0-9]{10}" required >
           </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3">
-              <label for="email2" class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                Confirmer votre adresse email              </label>
-              <input type="email" id="email2" oninput="compareEmails()" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
-              <p id="result"></p>
-            </div>
-          </div>
-          <script>
-            function compareEmails() {
-                var email1 = document.getElementById("email1").value;
-                var email2 = document.getElementById("email2").value;
-                var resultMessage = document.getElementById("result");
-                var email1Field = document.getElementById("email1");
-                var email2Field = document.getElementById("email2");
-                
-                if (email1 === email2) {
-                    resultMessage.innerText = "Les adresses e-mail sont identiques.";
-                    email1Field.setCustomValidity('');
-                    email2Field.setCustomValidity('');
-                } else {
-                    resultMessage.innerText = "Les adresses e-mail sont différentes. Veuillez les corriger.";
-                    email1Field.setCustomValidity('Les adresses e-mail doivent être identiques.');
-                    email2Field.setCustomValidity('Les adresses e-mail doivent être identiques.');
-                }
-            }
-            </script>
-        </div></div></div>
         </div>
-
-        <hr class="mt-6 border-b-1 border-blueGray-300">
+        <div class="w-full lg:w-6/12 px-4">
+          <div class="relative w-full mb-3">
+            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+              Telephone portable 2
+            </label>
+            <input type="tel" name="phone2" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  id="phone2"  pattern="[0-9]{10}" >
+          </div>
+        </div>
+        <div class="w-full lg:w-12/12 px-4">
+          <div class="relative w-full mb-3">
+            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+              Address
+            </label>
+           <textarea  input type="text" name="adresse" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" ></textarea>
+          </div>
+        </div></div>
+        </div>
 
 
         <div class="flex flex-wrap">
-          <div class="w-full lg:w-12/12 px-4">
-            <div class="relative w-full mb-3">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                Address
-              </label>
-             <textarea  input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" ></textarea>
-            </div>
-          </div>
+
         </div>
       
     </form>
@@ -247,7 +226,7 @@
  <!-- Buttons -->
 <!-- Component: Small primary elevated button -->
 
-<div> <form method="GET" action="{{ route('test2') }}"> @csrf <button id="submitButton" type="submit" class="inline-flex items-center justify-center h-8 gap-2 px-4 text-xs font-medium tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-500 shadow-emerald-200 hover:bg-emerald-600 hover:shadow-sm hover:shadow-emerald-200 focus:bg-emerald-700 focus:shadow-sm focus:shadow-emerald-200 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none" >
+<div> <form id="myForm" method="GET" action="{{ route('test2') }}"> @csrf <button id="submitButton" type="submit" class="inline-flex items-center justify-center h-8 gap-2 px-4 text-xs font-medium tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-500 shadow-emerald-200 hover:bg-emerald-600 hover:shadow-sm hover:shadow-emerald-200 focus:bg-emerald-700 focus:shadow-sm focus:shadow-emerald-200 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none" >
 <span>Suivant</span>
 </button>
 <script>
@@ -258,6 +237,7 @@
       // Vérifier si tous les champs requis sont remplis
       if (validateForm()) {
           // Si tous les champs sont remplis, soumettre le formulaire
+          document.getElementById('myForm').submit()
 
           //document.getElementById('myForm').submit(); APRES 
           
@@ -304,5 +284,6 @@
 </footer>
 </div>
 </section>
+</form>
 </body>
 </html>

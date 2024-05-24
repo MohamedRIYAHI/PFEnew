@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('candidats', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('serie_bac')->constrained('seriebac');
+            $table->string('serie_bac');
             $table->date('annee_bac');
             $table->integer('moyenne_bac');
             $table->string('montion_bac');

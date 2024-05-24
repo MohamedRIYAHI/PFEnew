@@ -24,6 +24,13 @@ class StaticController extends Controller
             return view('index');
            
     }
+    // public function formpdf()
+    // {
+    //     $users = StaticController::all();
+    //     dd($users);
+    //         return view('formpdf', ['users' => $users]);
+           
+    // }
     public function test2()
     {
         $seriebacs=["BAC SCIENCES ÉCONOMIQUES",  "BAC TECHNIQUES DE GESTION ET COMPTABILITÉ",   "BAC TECHNIQUES DE GESTION ADMINISTRATIVE", "BAC SCIENCES DE VIE ET DE TERRE",  "BAC LITTERAIRE",  "BAC SCIENCES HUMAINES", "BAC SCIENCES MATHÉMATIQUES A", "BAC SCIENCES MATHÉMATIQUES B", "BAC SCIENCES PHYSIQUES CHIMIE", "BAC SCIENCES ET TECHNOLOGIES ÉLECTRIQUES", "BAC SCIENCES ET TECHNOLOGIES MÉCANIQUES",  "BAC ETRANGER (MISSION)"];
@@ -33,6 +40,10 @@ class StaticController extends Controller
     public function fsjes()
     {
         return view('fsjes');
+    }
+    public function formpdf()
+    {
+        return view('formpdf');
     }
 
 

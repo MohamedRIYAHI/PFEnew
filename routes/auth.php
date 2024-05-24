@@ -20,6 +20,8 @@ Route::middleware('guest')->group(function () {
                 ->name('test');
  Route::get('test1', [StaticController::class, 'test1'])
                 ->name('test1');
+ Route::get('formpdf', [StaticController::class, 'formpdf'])
+                ->name('formpdf');
 
   Route::get('pdf', [PdfController::class, 'pdf'])
                 ->name('pdf');

@@ -93,10 +93,10 @@
 <!-- Component: Primary Dark Theme Footer -->
 <footer class="w-full text-blue-200 mt-5">
     <!-- Main footer -->
-    <div class="pt-4 pb-2 text-sm border-t border-blue-600 bg-blue-600">
+    <div class="pt-4 pb-2 text-sm border-t border-blue-600 bg_bleufsac grisfsac">
         <div class="container px-6 mx-auto">
             <div class="flex justify-between">
-                <nav class="col-span-2 md:col-span-4 lg:col-span-3 w-[300px]" aria-labelledby="footer-header">
+                <nav class="col-span-2 md:col-span-4 lg:col-span-3 w-[300px] " aria-labelledby="footer-header">
                     <h3 class="text-xl font-bold mb-2">À PROPOS DE CETTE PAGE</h3>
                     <p>Cette page est dédiée au Centre de Formation Continue de la Faculté Hassan 2 des Sciences Aïn Chock de Casablanca.</p>
                     <p>Elle offre des informations détaillées sur les programmes de formation continue disponibles, ainsi que des détails sur les licences professionnelles et les masters spécialisés proposés par notre institution.</p>
@@ -105,7 +105,7 @@
                     <h3 class="text-xl font-bold mb-2" id="footer-header">SUIVEZ-NOUS</h3>
                     <ul>
                         <li>
-                            <a href="https://web.facebook.com/FSAC2020/?_rdc=1&_rdr" class="text-blue-300 hover:text-blue-200">
+                            <a href="https://web.facebook.com/FSAC2020/?_rdc=1&_rdr" target="_blank" class="text-blue-300 hover:text-blue-200 grisfsac">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb01 desc-tb01">
                                     <title id="title-tb01">Icon title</title>
                                     <desc id="desc-tb01">A more detailed description of the icon</desc>
@@ -115,7 +115,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200">
+                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac" >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb02 desc-tb02">
                                     <title id="title-tb02">Icon title</title>
                                     <desc id="desc-tb02">A more detailed description of the icon</desc>
@@ -125,7 +125,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200">
+                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-tb03 desc-tb03">
                                     <title id="title-tb03">Icon title</title>
                                     <desc id="desc-tb03">A more detailed description of the icon</desc>
@@ -135,7 +135,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-blue-300 hover:text-blue-200">
+                            <a href="#" class="text-blue-300 hover:text-blue-200 grisfsac">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="16" width="16" class="w-4 h-4 shrink-0" role="graphics-symbol" aria-labelledby="title-instagram desc-instagram">
                                     <title id="title-instagram">Icon title</title>
                                     <desc id="desc-instagram">A more detailed description of the icon</desc>
@@ -153,31 +153,31 @@
                         <h3 class="text-xl font-bold mb-2">LIENS RAPIDES</h3>
                         <ul>
                             <li class="mb-4">
-                                <a href="http://pfe1.test" class="flex items-center text-blue-300 hover:text-blue-200">
+                                <a href="#" class="flex items-center text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-home mr-2"></i>
                                     <span class="font-bold">ACCUEIL</span>
                                 </a>
-                                <a href="http://pfe1.test/#formations" class="flex items-center text-blue-300 hover:text-blue-200">
+                                <a href="#formations" class="flex items-center text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-graduation-cap mr-2"></i>
                                     <span class="font-bold">PROGRAMMES</span>
                                 </a>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-user-graduate mr-2 mt-1"></i>
                                     <div>
-                                        <a href="https://www.bing.com/search?pglt=43&q=Km+8+Route+d%27El+Jadida%2C+B.P+5366+Maarif+Casablanca+20100+Maroc&cvid=a5175137930146f4a7d9cae42c83e346&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDE4ODJqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531">
-                                            <span class="font-bold">ADRESSE</span>
-                                            <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
+                                        <a target="_blank" href="https://www.bing.com/search?pglt=43&q=Km+8+Route+d%27El+Jadida%2C+B.P+5366+Maarif+Casablanca+20100+Maroc&cvid=a5175137930146f4a7d9cae42c83e346&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDE4ODJqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531">
+                                        <span class="font-bold">ADRESSE</span>
+                                        <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-envelope mr-2 mt-1"></i>
                                     <div>
                                         <span class="font-bold">TÉLÉPHONE</span>
-                                        <span class="block">+212 5 22 23 06 80 / 84</span>
+                                        <span class="block"> +212 5 22 23 06 80 / 84</span>
                                     </div>
                                 </div>
-                                <div class="flex items-start text-blue-300 hover:text-blue-200">
+                                <div class="flex items-start text-blue-300 hover:text-blue-200 grisfsac">
                                     <i class="fas fa-fax mr-2 mt-1"></i>
                                     <div>
                                         <span class="font-bold">FAX</span>

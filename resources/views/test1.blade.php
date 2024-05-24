@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-      <form>
+      <form   method="post" action="{{ route('test1.store') }}">
         <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
             Informations personnelles    </h6>
           <div class="flex flex-wrap">
@@ -157,7 +157,7 @@
  <!-- Buttons -->
 <!-- Component: Small primary elevated button -->
 
-<div> <form method="GET" action="{{ route('test') }}"> @csrf <button id="submitButton" type="submit" class="inline-flex items-center justify-center h-8 gap-2 px-4 text-xs font-medium tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-500 shadow-emerald-200 hover:bg-emerald-600 hover:shadow-sm hover:shadow-emerald-200 focus:bg-emerald-700 focus:shadow-sm focus:shadow-emerald-200 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none" >
+<div>  @csrf <button id="submitButton" type="submit" class="inline-flex items-center justify-center h-8 gap-2 px-4 text-xs font-medium tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-500 shadow-emerald-200 hover:bg-emerald-600 hover:shadow-sm hover:shadow-emerald-200 focus:bg-emerald-700 focus:shadow-sm focus:shadow-emerald-200 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none" >
 <span>Suivant</span>
 </button>
 <script>

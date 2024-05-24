@@ -10,6 +10,7 @@ use App\Http\Controllers\PdfController;
 
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Models\Filiere;
 
 
@@ -72,7 +73,9 @@ Route::get('/dashboard', function () {
      route::get('/pdf',[PdfController::class,'pdf'])->name('pdf');
      route::get('/test2/fin',[PdfController::class,'fin'])->name('fin');
      route::get('/pdfin',[PdfController::class,'pdfin'])->name('pdfin');
-     route::get('/test1',[PdfController::class,'test1'])->name('test1');
+     route::get('/test1',[UserController::class,'index'])->name('test1');
+     route::post('/test1/store',[UserController::class,'store'])->name('test1.store');
+     route::get('/formpdf',[PdfController::class,'formpdf'])->name('formpdf');
 
 
 
