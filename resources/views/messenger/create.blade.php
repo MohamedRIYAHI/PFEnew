@@ -15,32 +15,32 @@
                         <div class="col-md-6">
                             <!-- Subject Form Input -->
                             <div>
-                                <x-label for="subject" :value="__('Subject')" />
-                                <x-input id="subject" class="block w-full mt-1" type="text" name="subject"
-                                         :value="old('subject')" />
+                                <label for="subject" > Subject </label>
+                                <input id="subject" class="block w-full mt-1" type="text" name="subject"
+                                         value="{{ old('subject') }}">
                             </div>
 
                             <!-- Recipients list -->
                             <div class="mt-4">
-                                <x-label for="recipient" :value="__('Recipient')" />
+                                <label for="recipient"  > Recipient </label>
                                 <select name="recipient"
                                         class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                     @foreach ($users as $user)
-                                        <option value="{{ $user->id }}">{{ $message->user->nom }}{{ $message->user->nom }}</option>
+                                        <option value="{{ $user->id }}">{{ $user->nom }}{{ $user->prenom }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <!-- Message Form Input -->
                             <div class="mt-4">
-                                <x-label for="message" :value="__('Message')" />
+                                <label for="message" > Message </label>
                                 <textarea name="message" rows="10"
                                           class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{ old('message') }}</textarea>
                             </div>
 
                             <!-- Submit Form Input -->
                             <div class="mt-4">
-                                <x-button>Submit</x-button>
+                                <x-primary-button>Submit</x-primary-button>
                             </div>
                         </div>
                     </form>

@@ -13,7 +13,7 @@
                         <div class="space-y-4">
                             @foreach ($thread->messages as $message)
                                 <div class="px-4 py-2 leading-relaxed border rounded-lg sm:px-6 sm:py-4">
-                                    <strong>{{ $message->user->nom }}{{ $message->user->nom }}</strong>
+                                    <strong>{{ $message->user->nom }}{{ $message->user->prenom }}</strong>
                                     <span class="text-xs text-gray-400">{{ $message->created_at->diffForHumans() }}
                                     </span>
                                     <p class="text-sm">
@@ -29,14 +29,14 @@
 
                             <!-- Message Form Input -->
                             <div class="mt-4">
-                                <x-label for="message" :value="__('Reply message')" />
+                                <label for="message" > Reply message </label>
                                 <textarea name="message" rows="10"
                                           class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{ old('message') }}</textarea>
                             </div>
 
                             <!-- Submit Form Input -->
                             <div class="mt-4">
-                                <x-button>Submit</x-button>
+                                <x-primary-button>Submit</x-primary-button>
                             </div>
                         </form>
 

@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use app\Http\Controllers\StaticController;
-use App\Models\Threads;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Message;
+use Cmgmyr\Messenger\Models\Thread;
+use Cmgmyr\Messenger\Models\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use App\Models\Participant;
+use Cmgmyr\Messenger\Models\Participant;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MessagerieController extends Controller
@@ -22,7 +21,7 @@ class MessagerieController extends Controller
      */
     public function index()
     {
-        $threads = Threads::forUser(Auth::id())
+        $threads = Thread::forUser(Auth::id())
             ->withCount('messages')
             ->latest()
             ->get()
@@ -86,7 +85,7 @@ class MessagerieController extends Controller
         // Recipients
         $thread->addParticipant($request->recipient);
 
-        return redirect()->route('messages')->with('success', 'Message sent successfully.');
+        return redirect()->route('consultations.index')->with('success', 'Message sent successfully.');
     }
 
     /**

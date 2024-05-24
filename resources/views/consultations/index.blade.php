@@ -81,6 +81,43 @@
 
                 <td>
                     <a href="{{ route('consultations.show', $consultation->id) }}" class="btn btn-primary">Voir</a>
+                    @if(Auth::user()->role === "chef_filiere")
+                        <!-- Open the modal using ID.showModal() method -->
+                        <button class="btn" id="message">Envoyer Un Message</button>
+                        <dialog id="ModelMessage" class="modal">
+                            <div class="modal-box">
+                                <form action="{{ route('messages.store') }}" method="post">
+                                    @csrf
+                                    <!-- Subject Form Input -->
+                                    <div>
+                                        <label for="subject">Subject</label>
+                                        <input id="subject" class="block w-full mt-1" type="text" name="subject" value="{{ old('subject') }}">
+                                    </div>
+
+                                    <!-- Recipient Form Input -->
+                                    <div class="mt-4">
+                                        <label for="recipient_name">Recipient</label>
+                                        <input id="recipient_name" class="block w-full mt-1" type="text" value="{{ $consultation->candidat->user->nom }} {{ $consultation->candidat->user->prenom }}" readonly>
+                                    </div>
+
+                                    <!-- Store recipient's ID -->
+                                    <input id="recipient" type="hidden" name="recipient" value="{{ $consultation->candidat->user->id }}">
+
+                                    <!-- Message Form Input -->
+                                    <div class="mt-4">
+                                        <label for="message">Message</label>
+                                        <textarea name="message" rows="10" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{ old('message') }}</textarea>
+                                    </div>
+
+                                    <!-- Submit Form Input -->
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </dialog>
+                    @endif
                     @if(Auth::user()->role === "candidat")
 
 
@@ -97,6 +134,18 @@
         </tbody>
     </table>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var dialog = document.getElementById('ModelMessage');
+        if (!dialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+        }
+
+        document.getElementById('message').addEventListener('click', function() {
+            dialog.showModal();
+        });
+    });
+</script>
 
 </body>
 </html>
