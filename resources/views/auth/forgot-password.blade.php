@@ -1,6 +1,7 @@
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Mot de passe oublié ? Pas de problème. Il vous suffit de nous communiquer votre adresse e-mail et nous vous enverrons un lien de réinitialisation de mot de passe par e-mail, vous permettant de choisir un nouveau.') }}
+       <strong> Mot de passe oublié ? Pas de problème. Il vous suffit de nous communiquer votre adresse e-mail  <br>et nous vous enverrons  un lien de réinitialisation de mot de passe par e-mail, vous permettant de choisir un nouveau.
+    </strong>
     </div>
 
     <!-- Session Status -->
@@ -16,7 +17,7 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-end mt-4" class="btn btn-warning">
             <x-primary-button>
                 {{ __('Envoyer un lien de réinitialisation de mot de passe par e-mail') }}
             </x-primary-button>
