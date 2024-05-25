@@ -31,7 +31,7 @@
         @endif
         <form method="POST" action="{{ route('register') }}" class="card-body" enctype="multipart/form-data">
             @csrf
-            <h2 class="text-2xl font-bold text-center">Register</h2>
+            <h2 class="text-2xl font-bold text-center">Pré-inscription</h2>
             <h3 class=" ">    Tous les champs avec une Astérix (*) sont obligatoires.</h3>
             <div x-show="step === 1">
                 <div>

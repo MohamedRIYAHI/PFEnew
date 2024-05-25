@@ -10,32 +10,54 @@
 <body>
     
 
-    <h2>title:{{ $title }}</h2>
-    <h2>Date:{{ $date }}</h2>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>nom</th>
-                <th>prenom</th>
-                <th>email</th>
-                <th>telephone</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $key=> $user)
-            <tr>
-                <td>{{ $user->nom }}</td>
-                <td>{{ $user->prenom }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->telephone }}</td>
-
-                
-            </tr>
-            @endforeach
-        </tbody>
+    <div class="">  
+        <img src='LOGO-FSAC.jpg' id="" alt="image" style=" max-width: 230px;max-height: 230px;margin-bottom:5px">
+      </div>
+      <h2>{{ $title }} {{ $oldyears }}-{{ $years }} </h2>
+    <table border="">
+        <caption> <u> Formation Continue </u></caption>
+        <tr>
+            <th colspan="2">FILIÈRE DEMANDÉE :</th>
+        </tr>
+        <tr>
+            <td>Filière choix 1:</td>
+        </tr>
+        <tr>
+            <td>Filière choix 2:</td>
+        </tr>
+        <tr>
+            <td>Filière choix 3:</td>
+        </tr>
+        <br>
+        <tr>
+            <th colspan="2">INFORMATIONS PERSONNELLES :</th>
+        </tr>
+        <tr>
+            <td>Nom:</td>
+        </tr>
+        <tr>
+            <td>Prénom:</td>
+        </tr>
+        <tr>
+            <td>Date de naissance:</td>
+        </tr>
+        <tr>
+            <td>Lieu de naissance:</td>
+        </tr>
+        <tr>
+            <td>CIN:</td>
+        </tr>
+        <tr>
+            <td>CNE:</td>
+        </tr>
+        <tr>
+            <td>Téléphone portable:</td>
+        </tr>
+        <tr>
+            <td>E-mail:</td>
+        </tr>
+        <b>Date:{{ $date }}</b>
 
     </table>
-
 </body>
 </html>

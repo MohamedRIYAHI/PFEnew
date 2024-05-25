@@ -14,13 +14,15 @@ class PdfController extends Controller
      {
          $users=user::get();
          $data=[
-             'title'=>'Funda of web IT',
-             'date'=>date('m/d/y'),
+             'title'=>'FORMULAIRE DE PRÉINSCRIPTION ',
+             'years'=>  date('Y'),
+             'oldyears'=>date('Y')-1,
+             'date'=>date('d-m-y  H:i'),
             'users'=>$users
 
          ];
        $pdf=Pdf::loadView('generate-product-pdf',$data);
-         return $pdf->download('invoise.pdf');
+         return $pdf->download('Préinscription.pdf');
      }
     public function fin()
     {
