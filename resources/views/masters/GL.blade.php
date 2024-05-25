@@ -34,7 +34,7 @@
                 <button class="px-10 py-4"><a class="uppercase font-serif text-xl" >ENVOYER UNE DEMANDE</a></button>
             </form>
         @endif
-        @if(auth()->check() && Auth::user()->role === "chef_filiere" || Auth::user()->role === "admin")
+        @if(auth()->check() && (Auth::user()->role === "chef_filiere" || Auth::user()->role === "admin"))
             <a class="uppercase font-serif text-xl" href="{{ route('consultations.index') }}">PRÉ-INSCRIPTION EN LIGNE</a>
         @endif
         @if(!auth()->check())
