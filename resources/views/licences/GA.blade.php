@@ -26,14 +26,18 @@
 </header>
 <div class="flex space-x-4 py-10">
     <div class="w-1/2 bg-transparent items-center justify-center flex border-2 border-sky-500 shadow-lg hover:bg-sky-500 text-sky-500 hover:text-white duration-300 cursor-pointer active:scale-[0.98]">
-{{--        if the auth have role candidat--}}
+        {{--        if the auth have role candidat--}}
         @if(auth()->check() && Auth::user()->role === "candidat")
             <form action="{{ route("consultations.store",['candidat' => auth()->id(), 'filiere' => "Génie Agroalimentaire (GA)"]) }}" method="POST">
                 @csrf
                 <button class="px-10 py-4"><a class="uppercase font-serif text-xl" >ENVOYER UNE DEMANDE</a></button>
             </form>
-        @else
-            <a class="uppercase font-serif text-xl" href="{{ url('login') }}">PRÉ-INSCRIPTION EN LIGNE</a>
+        @endif
+        @if(auth()->check())
+            <a class="uppercase font-serif text-xl" href="{{ url('/') }}">PRÉ-INSCRIPTION EN LIGNE</a>
+        @endif
+        @if(!auth()->check())
+            <a class="uppercase font-serif text-xl" href="{{ url('register') }}">PRÉ-INSCRIPTION EN LIGNE</a>
         @endif
     </div>
     <div class="w-1/2 bg-transparent items-center justify-center flex border-2 border-sky-500 shadow-lg hover:bg-sky-500 text-sky-500 hover:text-white duration-300 cursor-pointer active:scale-[0.98]">

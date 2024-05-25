@@ -64,33 +64,7 @@
         <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     </div>
 </div>
-<div class="grid grid-cols-1 pt-4 ">
-    <div>
-        <h2 class="font-bold text-3xl text-center mb-8 ">Bienvenue sur le Portail de Formation Continue de la Faculté Hassan 2 des Sciences Aïn Chock de Casablanca !</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pl-4 pr-4">
-        <div>
-            <p class="font-serif text-lg leading-relaxed text-gray-800">
-                À l'Université Faculté Hassan 2 des Sciences, nous comprenons parfaitement l'importance cruciale de rester compétitif dans un monde en constante évolution. C'est pourquoi nous nous engageons à vous offrir une gamme complète de programmes de formation continue, soigneusement conçus pour répondre aux besoins spécifiques des professionnels d'aujourd'hui.
 
-                Nos programmes de formation continue sont élaborés et dispensés par des professeurs renommés et des praticiens chevronnés, garantissant ainsi une combinaison idéale entre théorie et pratique. Vous bénéficierez de l'expertise académique de notre institution de premier plan, ainsi que des conseils avisés de professionnels expérimentés dans votre domaine.
-            </p>
-        </div>
-        <div>
-            <p class="font-serif text-lg leading-relaxed text-gray-800">
-                Que vous soyez en quête de perfectionnement professionnel, de mise à jour de vos compétences ou de changement de carrière, notre plateforme vous offre l'opportunité de poursuivre votre développement professionnel de manière flexible et adaptée à votre emploi du temps.
-
-                Explorez nos programmes variés et choisissez celui qui correspond le mieux à vos objectifs et aspirations professionnelles. Nous sommes là pour vous accompagner à chaque étape de votre parcours de formation continue et vous aider à atteindre vos ambitions professionnelles.
-            </p>
-            <p>
-                <a class="font-serif text-lg leading-relaxed text-blue-900" href="http://pfe1.test/register">
-                    Rejoignez-nous dès aujourd'hui et engagez-vous sur la voie de l'excellence professionnelle avec la Faculté Hassan 2 des Sciences Aïn Chock de Casablanca !
-                </a>
-            </p>
-        </div>
-    </div>
-
-</div>
 <div x-data="{ showLicences: true, showMasters: false }" id="formations" class="my-10 mb-4 mt-5">
     <div class="pt-4 flex justify-between container mx-auto px-4">
         <button @click="showLicences = true; showMasters = false"
@@ -140,21 +114,8 @@
 </div>
 
 
-<div class="container mx-auto py-4">
-    <h1 class="font-serif text-lg leading-relaxed lg:text-3xl font-extrabold text-center text-blue-700">Faculté des Sciences Aïn Chock</h1>
-    <div class="font-serif text-lg  text-gray-800 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 flex flex-wrap">
-            <img src="{{ asset('qq.jpeg') }}" alt="" class="w-full h-auto rounded-lg shadow-lg object-contain">
-            <div class="bg-white p-8 rounded-lg shadow-lg py-20">
-                <p class="font-roboto text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700">La Faculté des sciences Aïn-Chock de Casablanca (FSAC) fait partie de l’Université Hassan II Casablanca. Elle a été créée en 1981 et comprend cinq départements d’enseignement et de recherche dans les domaines suivants : Mathématiques, Informatique, Physique, Chimie, Biologie et Géologie.</p>
 
-                <p class="font-roboto text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700">La Faculté des Sciences Aïn Chock est un établissement à accès ouvert à tous les bacheliers scientifiques de sa carte scolaire, les formations et l’évaluation sont organisées selon le système LMD (Licence. Master, Doctorat).</p>
-
-                <p class="font-roboto text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700">Les diplômes délivrés sont : La licence fondamentale ou la licence professionnelle ; le Master ou le Master spécialisé et le Doctorat.</p>
-
-                <p class="font-roboto text-lg md:text-xl lg:text-xl leading-relaxed text-gray-700">La FSAC a également une offre de formation continue qui s’adresse à des salariés souhaitant préparer un Diplôme d’Université ou suivre une formation qualifiante afin de se perfectionner ou de se réorienter professionnellement.</p>
-            </div>
-    </div>
-</div>
+<!-- Component: Primary Dark Theme Footer -->
 <!-- Component: Primary Dark Theme Footer -->
 <footer class="w-full text-blue-200 mt-5">
     <!-- Main footer -->
@@ -230,8 +191,8 @@
                                     <i class="fas fa-user-graduate mr-2 mt-1"></i>
                                     <div>
                                         <a target="_blank" href="https://www.bing.com/search?pglt=43&q=Km+8+Route+d%27El+Jadida%2C+B.P+5366+Maarif+Casablanca+20100+Maroc&cvid=a5175137930146f4a7d9cae42c83e346&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDE4ODJqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531">
-                                        <span class="font-bold">ADRESSE</span>
-                                        <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
+                                            <span class="font-bold">ADRESSE</span>
+                                            <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
                                         </a>
                                     </div>
                                 </div>
