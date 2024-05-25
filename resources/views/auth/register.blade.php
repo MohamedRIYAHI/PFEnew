@@ -175,8 +175,8 @@
                                 {{ __('Vous avez deja un compte ?') }}
                             </a>
                         @endif
-            
-                
+
+
                     </div>
                 </div>
 
@@ -221,7 +221,7 @@
                         </label>
                         <select class="select select-bordered w-full " name="dernier_diplome">
                             <option disabled selected>-------------</option>
-                            <option value="bac">DEUG</option>
+                            <option value="DEUG">DEUG</option>
                             <option value="DUT">DUT</option>
                             <option value="BTS"> BTS</option>
                             <option value="DTS">DTS</option>

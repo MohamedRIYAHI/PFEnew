@@ -32,7 +32,7 @@ class RegisteredUserController extends Controller
     {
 
         $validatedData = $request->validate([
-            'photo' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'photo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
             'cv' => ['required', 'file', 'mimes:pdf', 'max:2048'],
             'lettre_motivation' => ['required', 'file', 'mimes:pdf', 'max:2048'],
             'nom' => ['required', 'string', 'max:255'],
