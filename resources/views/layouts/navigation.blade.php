@@ -64,6 +64,13 @@
                                 <x-dropdown-link :href="route('chefs.dashboard')">
                                     {{ __('Dashboard') }}
                                 </x-dropdown-link>
+
+                            @endif
+                            @if(Auth::user()->role == 'admin')
+                                <x-dropdown-link :href="route('chefs.index')">
+                                    {{ __('Liste des Chefs Filiere') }}
+                                </x-dropdown-link>
+
                             @endif
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">

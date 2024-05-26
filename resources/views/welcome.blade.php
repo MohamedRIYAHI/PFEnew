@@ -15,6 +15,14 @@
 
     </div>
 </header>
+
+    <div class="container mx-auto text-center bg-white my-10 bg-gray-100">
+        <h2 class="text-4xl font-bold mb-6">Bienvenue au Centre de Formation Continue</h2>
+        <p class="text-gray-700 mb-8">Découvrez nos programmes de formation conçus pour améliorer vos compétences et booster votre carrière.</p>
+        <a href="{{ url('/#formations') }}" class="bg_bleufsac text-neutral-100 px-6 py-3 rounded-full">Voir les Formations</a>
+    </div>
+
+
 <div class="x-4">
 {{--slider--}}
     <div class="max-w-3xl mx-auto my-8">
@@ -65,6 +73,11 @@
     </div>
 </div>
 
+<div class="container mx-auto bg-gray-100 my-10">
+    <h2 class="text-3xl font-bold mb-6 text-center">Nos Formations</h2>
+    <p class="text-gray-700 text-center mb-8">Nous sommes dédiés à fournir des formations de haute qualité pour aider les professionnels à atteindre leurs objectifs de carrière. Nos formateurs sont des experts dans leurs domaines et apportent une expérience pratique précieuse à chaque session de formation.</p>
+</div>
+
 <div x-data="{ showLicences: true, showMasters: false }" id="formations" class="my-10 mb-4 mt-5">
     <div class="pt-4 flex justify-between container mx-auto px-4">
         <button @click="showLicences = true; showMasters = false"
@@ -79,14 +92,13 @@
         </button>
     </div>
 
-
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-center">
             <div x-show="showLicences" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 @foreach($licences as $licence)
                     <a href="{{ route('licences', ['id' => $licence->id]) }}" class="card">
                         <div class="blob"></div>
-                        <div class="content overflow-hidden text-center bg-gradient-to-br from-[#F1FEC6] to-blue-600 rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32 bg">
+                        <div class="content overflow-hidden text-center bg-gradient-to-br from-MyGray to-MyGray rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32 bg hover:bg-gradient-to-br hover:from-MyGray hover:to-MyGray">
                             <div class="p-6">
                                 <h2 class="mb-4 text-xl font-medium text-blue-900">{{ $licence->nom }}</h2>
                                 <p class="text-gray-700">{{ $licence->description }}</p>
@@ -100,10 +112,10 @@
                 @foreach($masters as $master)
                     <a href="{{ route('masters', [$master->id]) }}" class="card">
                         <div class="blob"></div>
-                        <div class="content overflow-hidden text-center bg-gradient-to-br from-blue-600 to-[#F1FEC6] rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32 bg">
+                        <div class="content overflow-hidden text-center bg-gradient-to-br from-Myblue to-Myblue rounded-lg shadow-md hover:shadow-xl transition duration-300 h-32 bg hover:bg-gradient-to-br hover:from-Myblue hover:to-Myblue">
                             <div class="p-6">
-                                <h3 class="mb-4 text-xl font-medium text-blue-900">{{ $master->nom }}</h3>
-                                <p class="text-gray-700">{{ $master->description }}</p>
+                                <h3 class="mb-4 text-xl font-medium text-MyGray">{{ $master->nom }}</h3>
+                                <p class="text-MyGray">{{ $master->description }}</p>
                             </div>
                         </div>
                     </a>
@@ -111,6 +123,8 @@
             </div>
         </div>
     </div>
+
+</div>
 </div>
 
 

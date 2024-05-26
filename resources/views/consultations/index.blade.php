@@ -32,9 +32,8 @@
         <!-- head -->
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Candidat ID</th>
-            <th>Filiere ID</th>
+            <th>Candidat</th>
+            <th>Filiere</th>
 
             @if(Auth::user()->role === "chef_filiere")
             <th>Verification</th>
@@ -49,7 +48,6 @@
         <!-- rows -->
         @foreach($consultations as $consultation)
             <tr class="hover">
-                <th>{{ $consultation->id }}</th>
                 <td>{{ $consultation->candidat->user->nom }} {{ $consultation->candidat->user->prenom }}</td>
                 <td>{{ $consultation->filiere->nom }}</td>
                 @if(Auth::user()->role === "chef_filiere")
@@ -112,6 +110,8 @@
                                     <!-- Submit Form Input -->
                                     <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="button" class="btn btn-secondary" id="closeDialog">Close</button>
+
                                     </div>
 
                                 </form>
@@ -144,7 +144,13 @@
         document.getElementById('message').addEventListener('click', function() {
             dialog.showModal();
         });
+        document.getElementById('closeDialog').addEventListener('click', function() {
+            dialog.close();
+        });
     });
+
+//     add button for close the dialog
+
 </script>
 
 </body>

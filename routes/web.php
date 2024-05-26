@@ -168,4 +168,7 @@ Route::get('/masters/{id}', function ($id) {
 Route::get("mot_de_doyen", function (){
     return view("mot_de_doyen");
 })->name("motDoyen");
+
+
+
 require __DIR__.'/auth.php';
