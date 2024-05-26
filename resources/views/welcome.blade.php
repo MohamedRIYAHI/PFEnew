@@ -67,7 +67,7 @@
 
 <div x-data="{ showLicences: true, showMasters: false }" id="formations" class="my-10 mb-4 mt-5">
     <div class="pt-4 flex justify-between container mx-auto px-4">
-        <button @click="showLicences = true; showMasters = false
+        <button @click="showLicences = true; showMasters = false"
                 :class="{ 'bg-blue-600 text-white shadow-md hover:shadow-lg': showLicences, 'bg-blue-200 text-blue-800 hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out shadow-sm hover:scale-105': !showLicences }"
                 class="uppercase w-[420px] font-semibold py-3 px-6 border border-transparent rounded transform transition-transform" id="custom-button">
             Licences Professionnelles
