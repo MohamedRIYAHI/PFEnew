@@ -13,12 +13,13 @@ class PdfController extends Controller
      public function pdf()
      {
          $users=user::get();
+         view()->share('user',$users);
          $data=[
              'title'=>'FORMULAIRE DE PRÉINSCRIPTION ',
              'years'=>  date('Y'),
-             'oldyears'=>date('Y')-1,
+             'oldyears'=>date('Y')+1,
              'date'=>date('d-m-y  H:i'),
-            'users'=>$users
+            'user'=>$users
 
          ];
        $pdf=Pdf::loadView('generate-product-pdf',$data);
@@ -35,7 +36,9 @@ class PdfController extends Controller
       $user =User::all();
       $data=[
         'title'=>'Funda of web IT',
-        'date'=>date('m/d/y'),
+        'years'=>date('m/d/y'),
+        'date'=>date('d-m-y  H:i'),
+
         'users'=>$user
        
       ];
