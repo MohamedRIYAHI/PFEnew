@@ -16,15 +16,15 @@
     </div>
 </header>
 
-    <div class="container mx-auto text-center bg-white my-10 bg-gray-100">
-        <h2 class="text-4xl font-bold mb-6">Bienvenue au Centre de Formation Continue</h2>
-        <p class="text-gray-700 mb-8">Découvrez nos programmes de formation conçus pour améliorer vos compétences et booster votre carrière.</p>
-        <a href="{{ url('/#formations') }}" class="bg_bleufsac text-neutral-100 px-6 py-3 rounded-full">Voir les Formations</a>
-    </div>
+<div class="container mx-auto text-center bg-white my-10 bg-gray-100">
+    <h2 class="text-4xl font-bold mb-6">Bienvenue au Centre de Formation Continue</h2>
+    <p class="text-gray-700 mb-8">Découvrez nos programmes de formation conçus pour améliorer vos compétences et booster votre carrière.</p>
+    <a href="{{ url('/#formations') }}" class="bg_bleufsac text-neutral-100 px-6 py-3 rounded-full">Voir les Formations</a>
+</div>
 
 
 <div class="x-4">
-{{--slider--}}
+    {{--slider--}}
     <div class="max-w-3xl mx-auto my-8">
 
         <div id="default-carousel" class="relative" data-carousel="static">
@@ -80,7 +80,7 @@
 
 <div x-data="{ showLicences: true, showMasters: false }" id="formations" class="my-10 mb-4 mt-5">
     <div class="pt-4 flex justify-between container mx-auto px-4">
-        <button @click="showLicences = true; showMasters = false
+        <button @click="showLicences = true; showMasters = false"
                 :class="{ 'bg-blue-600 text-white shadow-md hover:shadow-lg': showLicences, 'bg-blue-200 text-blue-800 hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out shadow-sm hover:scale-105': !showLicences }"
                 class="uppercase w-[420px] font-semibold py-3 px-6 border border-transparent rounded transform transition-transform" id="custom-button">
             Licences Professionnelles
@@ -205,8 +205,8 @@
                                     <i class="fas fa-user-graduate mr-2 mt-1"></i>
                                     <div>
                                         <a target="_blank" href="https://www.bing.com/search?pglt=43&q=Km+8+Route+d%27El+Jadida%2C+B.P+5366+Maarif+Casablanca+20100+Maroc&cvid=a5175137930146f4a7d9cae42c83e346&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDE4ODJqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531">
-                                        <span class="font-bold">ADRESSE</span>
-                                        <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
+                                            <span class="font-bold">ADRESSE</span>
+                                            <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
                                         </a>
                                     </div>
                                 </div>

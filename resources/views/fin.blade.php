@@ -13,7 +13,7 @@
     <header class=" font-serif relative z-20 w-full border-b shadow-lg border-b-1 border-slate-200 bg-white/90 shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
         <div class="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
             @include('layouts.navigation')
-    
+
         </div>
     </header>
 <body  class="bg-[#dcdcdc]"class="h-screen  flex items-center justify-center" style="background: #edf2f7;">
@@ -28,7 +28,7 @@
          padding: 10px 20px;
          position: absolute;
          right: 0; }
-    
+
         .ibox {
     clear: both;
     margin-bottom: 25px;
@@ -57,17 +57,17 @@
     strong {
     font-weight: 700;
 }
-        
+
     </style>
-    
+
 <section class=" py-1 bg-blueGray-50" >
 <div class="wrapper wrapper-content " style="padding-top:90px">
     <div class="row justify-between items-center">
 <div class="col-sm-12">
     <div class="ibox float-e-margins">
     <div class="ibox-content" style="border-width:0px 0px;padding-top:30px">
-    <div class="row " style="text-align: center; justify-between items-center">
-    
+    <div class="row " style="text-align: center; justify-between: items-center">
+
     <strong> Votre Pré-inscription en ligne est bien enregistrée. Pour qu'elle soit définitive   veuillez imprimer le formulaire de pré-inscription et déposer votre dossier complet auprès de votre établissement muni des pièces justificatives.
         <br>
         Avant la date limite de pré-inscription vous pouvez toujours modifier votre dossier de candidature en utilisant votre code de modification :
