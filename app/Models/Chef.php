@@ -18,8 +18,9 @@ class Chef extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function filiere(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function filiere(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Filiere::class);
     }
+
 }

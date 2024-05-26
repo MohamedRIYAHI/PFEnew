@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidat;
+use App\Models\Chef;
 use App\Models\Consultation;
 use App\Models\Filiere;
 
@@ -12,21 +13,40 @@ class ConsultationController extends Controller
 {
     public function index()
     {
-//        if the user is a candidat then show only his consultations
-        if (auth()->user()->role == 'candidat') {
-            if (!Candidat::where('user_id', auth()->user()->id)->exists()) {
+        $user = auth()->user();
+
+        // if the user is a candidat then show only his consultations
+        if ($user->role == 'candidat') {
+            if (!Candidat::where('user_id', $user->id)->exists()) {
                 $consultations = Consultation::all();
                 return view('consultations.index', compact('consultations'));
             }
 
-            $candidat = Candidat::where('user_id', auth()->user()->id)->first();
+            $candidat = Candidat::where('user_id', $user->id)->first();
             $consultations = Consultation::where('candidat_id', $candidat->id)->get();
             return view('consultations.index', compact('consultations'));
         }
-//        if the user is a chef then show all consultations
+
+        // if the user is a chef_filiere then show only the consultations of his filiere
+        if ($user->role == 'chef_filiere') {
+            $chef = Chef::where('user_id', $user->id)->first();
+            if ($chef) {
+                $consultations = Consultation::where('filiere_id', $chef->filiere_id)->get();
+                return view('consultations.index', compact('consultations'));
+            }
+        }
+
+        // if the user is a chef then show all consultations
+        if ($user->role == 'chef') {
+            $consultations = Consultation::all();
+            return view('consultations.index', compact('consultations'));
+        }
+
+        // Default: return all consultations
         $consultations = Consultation::all();
         return view('consultations.index', compact('consultations'));
     }
+
     public function store(Request $request, $candidatId, $filiereName){
         $userID = $candidatId;
         $candidat = Candidat::where('user_id', $userID)->first();
