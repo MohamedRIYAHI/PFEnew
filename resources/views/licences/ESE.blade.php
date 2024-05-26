@@ -17,11 +17,11 @@
     </div>
 </header>
 <div class="cadre uppercase relative">
-    <img src="{{ asset('7.jpeg') }}" class="image">
+    <img src="{{ asset('ESE.JPG') }}" class="image ">
     <h1 class="absolute text-5xl font-serif leading-relaxed font-extrabold text-center text-blue-700">Energies Solaire et Eolienne</h1>
     <h3 class="absolute text-2xl font-serif text-white prof">Pr. Mohamed ABID</h3>
 </div>
-<header class="titre">
+<header class="titre bg-red-50  ">
     <h1>PRÉ-INSCRIPTION</h1>
 </header>
 <div class="flex space-x-4 py-10">
@@ -34,7 +34,7 @@
             </form>
         @endif
         @if(auth()->check() && (Auth::user()->role === "chef_filiere" || Auth::user()->role === "admin"))
-            <a class="uppercase font-serif text-xl" href="{{ route('consultations.index') }}">PRÉ-INSCRIPTION EN LIGNE</a>
+            <a class="uppercase font-serif text-xl " href="{{ route('consultations.index') }}">PRÉ-INSCRIPTION EN LIGNE</a>
         @endif
         @if(!auth()->check())
             <a class="uppercase font-serif text-xl" href="{{ url('register') }}">PRÉ-INSCRIPTION EN LIGNE</a>
@@ -46,7 +46,7 @@
 </div>
 
 <div class="all">
-    <header class="titre">
+    <header class="titre  ">
         <h1 class="font-serif">OBJECTIFS</h1>
     </header>
     <main class="font-serif">

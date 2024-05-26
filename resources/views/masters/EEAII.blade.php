@@ -17,7 +17,7 @@
     </div>
 </header>
 <div class="cadre uppercase relative">
-    <img src="{{ asset('master.jpg') }}" class="image">
+    <img src="{{ asset('EE.JPG') }}" class="image">
     <h1 class="absolute text-5xl font-serif leading-relaxed font-extrabold text-center text-blue-700 mx-4">Electronique, Electrotechnique, Automatique et Informatique Industrielle</h1>
     <h3 class="absolute text-2xl font-serif text-white prof">Pr. Bahloul BENSASSI</h3>
 </div>
