@@ -7,6 +7,8 @@ use App\Models\Filiere;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Consultation;
+
 
 class ChefController extends Controller
 {

@@ -16,28 +16,28 @@
     </div>
 </header>
 
-<div class="container mx-auto text-center bg-white my-10 bg-gray-100">
-    <h2 class="text-4xl font-bold mb-6">Bienvenue au Centre de Formation Continue</h2>
-    <p class="text-gray-700 mb-8">Découvrez nos programmes de formation conçus pour améliorer vos compétences et booster votre carrière.</p>
-    <a href="{{ url('/#formations') }}" class="bg_bleufsac text-neutral-100 px-6 py-3 rounded-full">Voir les Formations</a>
-</div>
+    <div class="container mx-auto text-center bg-white my-10 bg-gray-100">
+        <h2 class="text-4xl font-bold mb-6">Bienvenue au Centre de Formation Continue</h2>
+        <p class="text-gray-700 mb-8">Découvrez nos programmes de formation conçus pour améliorer vos compétences et booster votre carrière.</p>
+        <a href="{{ url('/#formations') }}" class="bg_bleufsac text-neutral-100 px-6 py-3 rounded-full">Voir les Formations</a>
+    </div>
 
 
 <div class="x-4">
-    {{--slider--}}
-    <div class="max-w-3xl mx-auto my-8">
+{{--slider--}}
+    <div class="max-w-3xl mx-auto my-8" >
 
         <div id="default-carousel" class="relative" data-carousel="static">
             <!-- Carousel wrapper -->
-            <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+            <div class="overflow-hidden relative h-96 rounded-lg sm:h-96 xl:h-960 2xl:h-96">
                 <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                    <img src="{{ asset('fsac.jpg') }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    <img src="{{ asset('concours.png') }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="{{ asset('OIP.jpeg') }}"  class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    <img src="{{ asset('fsac.jpeg') }}"  class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -205,8 +205,8 @@
                                     <i class="fas fa-user-graduate mr-2 mt-1"></i>
                                     <div>
                                         <a target="_blank" href="https://www.bing.com/search?pglt=43&q=Km+8+Route+d%27El+Jadida%2C+B.P+5366+Maarif+Casablanca+20100+Maroc&cvid=a5175137930146f4a7d9cae42c83e346&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDE4ODJqMGoxqAIIsAIB&FORM=ANNTA1&PC=U531">
-                                            <span class="font-bold">ADRESSE</span>
-                                            <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
+                                        <span class="font-bold">ADRESSE</span>
+                                        <span class="block">Km 8 Route d'El Jadida, B.P 5366 Maarif Casablanca 20100 Maroc</span>
                                         </a>
                                     </div>
                                 </div>

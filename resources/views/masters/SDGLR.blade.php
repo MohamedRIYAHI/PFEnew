@@ -17,9 +17,9 @@
     </div>
 </header>
 <div class="cadre uppercase relative">
-    <img src="{{ asset('master.jpg') }}" class="image">
-    <h1 class="absolute text-5xl font-serif leading-relaxed font-extrabold text-center text-blue-700 mx-4">Science des Données Génie Logiciel et Réseaux</h1>
-    <h3 class="absolute text-2xl font-serif text-white prof">Pr.ERRAISS Mohammed</h3>
+    <img src="{{ asset('m.jpg') }}" class="image">
+    <h1 class="absolute text-5xl font-serif leading-relaxed font-extrabold text-center text-MyGray mx-4">Science des Données Génie Logiciel et Réseaux</h1>
+    <h3 class="absolute text-2xl font-serif text-MyWhite prof">Pr.ERRAISS Mohammed</h3>
 </div>
 <header class="titre">
     <h1>PRÉ-INSCRIPTION</h1>

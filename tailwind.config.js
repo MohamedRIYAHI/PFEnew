@@ -19,6 +19,7 @@ export default {
         colors: {
             "Myblue": "#0B4B79",
             "MyGray": "#868686",
+            "MyWhite": "#FFFFFF",
         }
     },
 
