@@ -64,8 +64,8 @@
                 </div>
                 <!-- Submit Form Input -->
                 <div class="mt-4">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="button" class="btn btn-secondary" id="closeDialog">Close</button>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    <button type="button" class="btn btn-secondary" id="closeDialog">Fermer</button>
                 </div>
             </form>
         </div>
@@ -76,8 +76,8 @@
         <tr>
             <th>Chef Filiere</th>
             <th>Filiere</th>
-            <th>Created At</th>
-            <th>Updated At</th>
+            <th> Date Création</th>
+            <th>Date Modification</th>
             <th>Action</th>
         </tr>
         </thead>

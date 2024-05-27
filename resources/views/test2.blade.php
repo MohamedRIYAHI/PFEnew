@@ -171,7 +171,7 @@
           </label>
           <div class="col-sm-12">
               <div class="form-group">
-                  <select name="specialite_dernier_diplome" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required id="id_sexe" onchange="autreSpecialiteSelected(this)">
+                  <select name="specialite_dernier_diplome" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required id="" onchange="autreSpecialiteSelected(this)">
                       <option value="" selected>--------------</option>
                       <option value="ECONOMIE">ECONOMIE</option>
                       <option value="GESTION">GESTION</option>

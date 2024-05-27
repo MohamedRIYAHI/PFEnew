@@ -15,7 +15,7 @@
                         <div class="col-md-6">
                             <!-- Subject Form Input -->
                             <div>
-                                <label for="subject" > Subject </label>
+                                <label for="subject" > Sujet </label>
                                 <input id="subject" class="block w-full mt-1" type="text" name="subject"
                                          value="{{ old('subject') }}">
                             </div>

@@ -24,7 +24,7 @@
     </div>
 @endif
 <div class="pb-4">
-    <h1 class="text-3xl font-bold text-center mt-8">Liste des Consultations</h1>
+    <h1 class="text-3xl font-bold text-center mt-8">Liste des Candidatures</h1>
 
 </div>
 <div class="overflow-x-auto p-4">
@@ -39,8 +39,8 @@
             <th>Verification</th>
             @endif
             <th>Status Verification</th>
-            <th>Created At</th>
-            <th>Updated At</th>
+            <th>Date Création</th>
+            <th>Date Modification</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -110,7 +110,7 @@
                                     <!-- Submit Form Input -->
                                     <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="button" class="btn btn-secondary" id="closeDialog">Close</button>
+                                        <button type="button" class="btn btn-secondary" id="closeDialog">Fermer</button>
 
                                     </div>
 

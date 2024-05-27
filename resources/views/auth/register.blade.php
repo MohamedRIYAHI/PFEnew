@@ -108,7 +108,7 @@
                         <label class="label">
                             <span class="label-text">TELEPHONE PORTABLE(*)</span>
                         </label>
-                        <input type="text" placeholder="Telephone Portable" name="phone" class="input input-bordered" required />
+                        <input type="text" placeholder="Telephone Portable" name="phone" class="input input-bordered" pattern="[0-9]{10}" required />
                     </div>
                 </div>
                 <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -158,13 +158,13 @@
 
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text">PASSWORD (*)</span>
+                            <span class="label-text">MOT DE PASSE (*)</span>
                         </label>
                         <input type="password" placeholder="Password" name="password" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text">CONFIRMER VOTRE PASSWORD (*)</span>
+                            <span class="label-text">CONFIRMER MOT DE PASSE (*)</span>
                         </label>
                         <input type="password" placeholder="Confirmation Password" name="password_confirmation" class="input input-bordered" required />
 
@@ -172,7 +172,7 @@
                     <div class="justify-end mt-4">
                         @if (Route::has('login'))
                             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                                {{ __('Vous avez deja un compte ?') }}
+                                {{ __('Vous avez déja un compte ?') }}
                             </a>
                         @endif
 
