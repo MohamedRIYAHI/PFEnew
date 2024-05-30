@@ -241,7 +241,7 @@
 
           //document.getElementById('myForm').submit(); APRES 
           
-          window.location.href = "{{ route('test2') }}";
+          // window.location.href = "{{ route('test2') }}";
       } else {
           // Si des champs sont manquants, afficher un message d'erreur ou effectuer une autre action
           alert("Veuillez remplir tous les champs obligatoires(*).");

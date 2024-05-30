@@ -70,7 +70,7 @@
          </div>
          <div class="w-full lg:w-6/12 px-4">
           <div class="relative w-full mb-3">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="id_sexe">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="">
                   Dernier diplôme (*)
               </label>
               <div class="col-sm-12">

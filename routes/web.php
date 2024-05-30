@@ -72,6 +72,7 @@ Route::get('/dashboard', function () {
 
      route::get('/pdf',[PdfController::class,'pdf'])->name('pdf');
      route::get('/fin',[PdfController::class,'fin'])->name('fin');
+     route::get('/register2',[PdfController::class,'register2'])->name('register2');
 
      route::get('/pdfin',[PdfController::class,'pdfin'])->name('pdfin');
      route::get('/test2/fin',[PdfController::class,'fin'])->name('fin');

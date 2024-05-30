@@ -31,7 +31,7 @@
         @endif
         <form method="POST" action="{{ route('register') }}" class="card-body" enctype="multipart/form-data">
             @csrf
-            <h2 class="text-2xl font-bold text-center">Pré-inscription</h2>
+            <h2 class="text-2xl font-bold text-center">Pré-Candidature</h2>
             <h3 class=" ">    Tous les champs avec une Astérix (*) sont obligatoires.</h3>
             <div x-show="step === 1">
                 <div>
@@ -108,7 +108,7 @@
                         <label class="label">
                             <span class="label-text">TELEPHONE PORTABLE(*)</span>
                         </label>
-                        <input type="text" placeholder="Telephone Portable" name="phone" class="input input-bordered" pattern="[0-9]{10}" required />
+                        <input type="tel" placeholder="Telephone Portable" name="phone" class="input input-bordered" pattern="[0-9]{10}" required />
                     </div>
                 </div>
                 <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -207,10 +207,10 @@
                         <label class="label">
                             <span class="label-text">ANNÉE DU BACCALAURÉAT (*)</span>
                         </label>
-{{--                        select of years from 1998 to 2024 must be 2024 first--}}
-                        <select class="select select-bordered w-full " name="annee_bac">
+{{--                        select of years from 1990 to 2024 must be 2024 first--}}
+                        <select class="select select-bordered w-full " name="annee_bac" required>
                             <option disabled selected>-------------</option>
-                            @for($i=1998; $i<=2024; $i++)
+                            @for($i=1990; $i<=2024; $i++)
                                 <option value="{{$i}}">{{$i}}</option>
                             @endfor
                         </select>
@@ -219,7 +219,7 @@
                         <label class="label">
                             <span class="label-text">DERNIER DIPLÔME (*)</span>
                         </label>
-                        <select class="select select-bordered w-full " name="dernier_diplome">
+                        <select class="select select-bordered w-full " name="dernier_diplome" required>
                             <option disabled selected>-------------</option>
                             <option value="DEUG">DEUG</option>
                             <option value="DUT">DUT</option>
@@ -236,7 +236,7 @@
                         <label class="label">
                             <span class="label-text">SÉRIE DU BACCALAURÉAT (*)</span>
                         </label>
-                        <select class="select select-bordered w-full " name="serie_bac">
+                        <select class="select select-bordered w-full " name="serie_bac" required>
                             <option disabled selected>-------------</option>
 
                             <option value="BAC SCIENCES ÉCONOMIQUES">BAC SCIENCES ÉCONOMIQUES</option>
@@ -258,7 +258,7 @@
                         <label class="label">
                             <span class="label-text">SPÉCIALITÉ DU DERNIER DIPLÔME (*)</span>
                         </label>
-                        <select class="select select-bordered w-full " name="specialite">
+                        <select class="select select-bordered w-full " name="specialite" required>
                             <option disabled selected>-------------</option>
                             <option value="ECONOMIE">ECONOMIE</option>
                             <option value="GESTION">GESTION</option>
@@ -283,7 +283,7 @@
                         </label>
                         <select class="select select-bordered w-full " name="annee_diplome">
                             <option disabled selected>-------------</option>
-                            @for($i=1998; $i<=2024; $i++)
+                            @for($i=1990; $i<=2024; $i++)
                                 <option value="{{$i}}">{{$i}}</option>
                             @endfor
                         </select>
@@ -311,22 +311,7 @@
                     </div>
 
                 </div>
-                <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">CV (*)</span>
-                        </label>
-                        <input type="file" class="file-input file-input-bordered w-full" name="cv" required/>
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">LETTRE DE MOTIVATION (*)</span>
-                        </label>
-                        <input type="file" class="file-input file-input-bordered w-full" name="lettre_motivation" required/>
-                    </div>
-
-                </div>
+             
                 <div class="flex justify-end pt-3">
 
                     <button
@@ -536,9 +521,9 @@
             age--;
         }
 
-        if (age < 21) {
+        if (age < 19) {
             // If the user is less than 21 years old, display an error message and add the error class
-            dateError.textContent = 'You must be at least 21 years old.';
+            dateError.textContent = 'Vous devez avoir plus de 19 ans.';
             dateNaissanceField.className = 'input input-bordered input-error w-full';
         } else {
             // If the user is at least 21 years old, remove the error message and add the success class

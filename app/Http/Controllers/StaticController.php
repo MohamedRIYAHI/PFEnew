@@ -45,6 +45,10 @@ class StaticController extends Controller
     {
         return view('formpdf');
     }
+    public function register2()
+    {
+        return view('register2');
+    }
 
 
 

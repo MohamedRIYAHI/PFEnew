@@ -19,7 +19,11 @@ class Candidat extends Model
         'specialite',
         'nom_etab',
         'cv',
-        'lettre_motivation'
+        'lettre_motivation',
+        'diplôme_BAC',
+        'diplôme_BAC2_3',
+        'carteNT',
+        'releve_note',
     ];
     public function user()
     {
