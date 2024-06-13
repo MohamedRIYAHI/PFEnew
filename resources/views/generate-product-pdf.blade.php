@@ -30,7 +30,7 @@ th{
     </style>
 </head>
 <body>
-    
+    <form action="" method="POST">
     <div class="all">
         <div class="container">
            <div class="top">
@@ -49,20 +49,10 @@ th{
                        <th><u>FILIÈRE DEMANDÉE :</u></th>
                     </tr>
                     <tr class="c2">
-                        <td> <span class="nn">Filière choix 1:  </span> </td>
-                        <td>Filière1</td>
+                        <td> <span class="nn">Filière :  </span> </td>
+                        <td>{{ $user->nom }}</td>
                     </tr>
-                    <tr class="c2">
-                        <td><span class="nn">Filière choix 2 :</span></td>
-                        <td>Filière2</td>
-
-                        <td></td>
-                    </tr>
-                    <tr class="c2">
-                        <td><span class="nn">Filière choix 3 :</span></td>
-                        <td>Filière3</td>
-                        <td></td>
-                    </tr>
+           
                 </table>
                 <br>
                 <br>
@@ -72,46 +62,60 @@ th{
                     </tr>
                     <tr>
                         <td><span >Nom :</span></td>
-                        <td>FELLAH</td>
+                        <td>{{ $user->nom }}</td>
                     </tr>
                     <tr>
                         <td><span >Prénom : </span></td>
-                        <td>Abdelilah</td>
+                        <td>{{ $user->prenom }}</td>
                     </tr>
                     <tr>
                         <td><span >Date de naissance :</span></td>
-                        <td>22/07/2002</td>
+                        <td>{{ $user->date_naissance }}</td>
                     </tr>
                     <tr>
                         <td><span >Lieu de naissance :</span></td>
-                        <td>CASA</td>
+                        <td>{{ $user->lieu_naissance }}</td>
                     </tr>
                     <tr>
                         <td><span >CIN :</span></td>
-                        <td>BB11223</td>
+                        <td>{{ $user->cin }}</td>
                     </tr>
                     <tr>
                         <td><span >CNE :</span></td>
-                        <td>R11223344556</td>
+                        <td>{{ $user->cne }}</td>
+                    </tr>
+                      <tr>
+                        <td><span >Adresse email :</span></td>
+                        <td>{{ $user->email }}</td>
                     </tr>
                     <tr>
                         <td><span >Télephone :</span></td>
-                        <td>0699999999</td>
+                        <td>{{ $user->phone }}</td>
                     </tr>
                     <tr>
-                        <td><span >Adresse email :</span></td>
-                        <td>abdelilah@gmail.com</td>
+                        {{-- <th> <u>INFORMATIONS acade :</u></th>
                     </tr>
+                    <tr>
+                        <td><span >serie bac :</span></td>
+                        <td>{{ $Candidat->serie_bac }}</td>
+                    </tr>
+                    <tr>
+                        <td><span >Spécialité du dernier diplôme : </span></td>
+                        <td>{{ $Candidat->specialite }}</td>
+                    </tr>
+                    <tr>
+                        <td><span >Dernier diplôme :</span></td>
+                        <td>{{ $Candidat->dernier_diplome }}</td>
+                    </tr> --}}
+                  
                     
                 </table>
                 <br><br><br><br><br><br><br><br>
-         
-                    
                      <p>  Date:{{ $date }}  </p>
-                   
-                
+                        
             </div>
         </div>
     </div>
+</form>
 </body>
 </html>

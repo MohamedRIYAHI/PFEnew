@@ -70,15 +70,17 @@ Route::get('/dashboard', function () {
     Route::delete('{thread}', [MessagerieController::class, 'destroy'])->name('.destroy');
 });
 
-     route::get('/pdf',[PdfController::class,'pdf'])->name('pdf');
+    //  route::get('/pdf/{userId}',[PdfController::class,'pdf'])->name('pdf');
      route::get('/fin',[PdfController::class,'fin'])->name('fin');
+
      route::get('/register2',[PdfController::class,'register2'])->name('register2');
 
      route::get('/pdfin',[PdfController::class,'pdfin'])->name('pdfin');
      route::get('/test2/fin',[PdfController::class,'fin'])->name('fin');
-     route::get('/test1',[UserController::class,'index'])->name('test1');
      route::post('/test1/store',[UserController::class,'store'])->name('test1.store');
+     route::get('/test1',[UserController::class,'index'])->name('test1');
      route::get('/formpdf',[PdfController::class,'formpdf'])->name('formpdf');
+
 
 
 

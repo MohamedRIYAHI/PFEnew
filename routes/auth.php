@@ -22,15 +22,14 @@ Route::middleware('guest')->group(function () {
                 ->name('test1');
  Route::get('formpdf', [StaticController::class, 'formpdf'])
                 ->name('formpdf');
-                Route::get('fin', [PdfController::class, 'fin'])
+  Route::get('fin', [PdfController::class, 'fin'])
                 ->name('fin');         
 
   Route::get('pdf', [PdfController::class, 'pdf'])
                 ->name('pdf');
    Route::get('register2', [StaticController::class, 'register2'])
                 ->name('register2');
-  Route::get('test2/fin', [PdfController::class, 'fin'])
-                ->name('fin');
+
 
 Route::get('test2', [StaticController::class, 'test2'])
                 ->name('test2');
@@ -56,6 +55,11 @@ Route::get('test2', [StaticController::class, 'test2'])
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('fin', [PdfController::class, 'fin'])
+    ->name('fin');         
+
+Route::get('pdf', [PdfController::class, 'pdf'])
+    ->name('pdf');
     Route::get('verify-email', EmailVerificationPromptController::class)
                 ->name('verification.notice');
 
