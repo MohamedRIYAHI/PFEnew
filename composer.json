@@ -8,6 +8,7 @@
         "php": "^8.2",
         "barryvdh/laravel-dompdf": "^2.1",
         "cmgmyr/messenger": "^2.30",
+        "dompdf/dompdf": "^2.0",
         "laravel/breeze": "^2.0",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9"

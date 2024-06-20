@@ -19,8 +19,7 @@
             top: 0;}
         h3{
    text-align: center;
-            
-        }    
+        }
 td{
    padding-left: 30px;
 }
@@ -50,9 +49,9 @@ th{
                     </tr>
                     <tr class="c2">
                         <td> <span class="nn">Filière :  </span> </td>
-                        <td>{{ $user->nom }}</td>
+                        <td>{{ $consultation->filiere->nom }}</td>
                     </tr>
-           
+
                 </table>
                 <br>
                 <br>
@@ -107,12 +106,12 @@ th{
                         <td><span >Dernier diplôme :</span></td>
                         <td>{{ $Candidat->dernier_diplome }}</td>
                     </tr> --}}
-                  
-                    
+
+
                 </table>
                 <br><br><br><br><br><br><br><br>
                      <p>  Date:{{ $date }}  </p>
-                        
+
             </div>
         </div>
     </div>

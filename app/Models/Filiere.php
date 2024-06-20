@@ -17,7 +17,7 @@ class Filiere extends Model
     ];
     public function chef()
 {
- return $this->belongsTo(Chef::class);
+ return $this->hasOne(Chef::class);
 }
 
 }

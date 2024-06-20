@@ -34,11 +34,10 @@ class RegisteredUserController extends Controller
         $validatedData = $request->validate([
             'photo' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
             'cv' => ['required', 'file', 'mimes:pdf', 'max:2048'],
-            'lettre_motivation' => ['required', 'file', 'mimes:pdf', 'max:2048'],
-            'diplôme_BAC' => ['required', 'file', 'mimes:pdf', 'max:2048'],
-            'diplôme_BAC2_3' => ['required', 'file', 'mimes:pdf', 'max:2048'],
-            'carteNT' => ['required', 'file', 'mimes:pdf', 'max:2048'],
-            'releve_note' => ['required', 'file', 'mimes:pdf', 'max:2048'],
+            'lettre_motivation' => ['required', 'file', 'mimes:jpeg,png,jpg,gif,svg,pdf', 'max:2048'],
+            'file_derneier_diplome' => ['required', 'file', 'mimes:jpeg,png,jpg,gif,svg,pdf', 'max:2048'],
+            'carteNT' => ['required', 'file', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'releve_note' => ['required', 'file', 'mimes:jpeg,png,jpg,gif,svg,pdf', 'max:2048'],
             'nom' => ['required', 'string', 'max:255'],
             'nom_arabe' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],
@@ -75,32 +74,23 @@ class RegisteredUserController extends Controller
         $lettre_motivationName = $lettre_motivation->getClientOriginalName();
         $lettre_motivation->move(public_path('lettre_motivation'), $lettre_motivationName);
         $validatedData['lettre_motivation'] = $lettre_motivationName;
-        $lettre_motivation = $request->file('lettre_motivation');
 
-        // hadchi li zdt 
-        $diplôme_BAC = $request->file('diplôme_BAC');
-        $diplôme_BACName = $diplôme_BAC->getClientOriginalName();
-        $diplôme_BAC->move(public_path('diplôme_BAC'), $diplôme_BACName);
-        $validatedData['diplôme_BAC'] = $diplôme_BACName;
-        $diplôme_BAC = $request->file('diplôme_BAC');
+        // hadchi li zdt
+        $file_derneier_diplome = $request->file('file_derneier_diplome');
+        $file_derneier_diplomeName = $file_derneier_diplome->getClientOriginalName();
+        $file_derneier_diplome->move(public_path('file_derneier_diplome'), $file_derneier_diplomeName);
+        $validatedData['file_derneier_diplome'] = $file_derneier_diplomeName;
 
-        $diplôme_BAC2_3 = $request->file('diplôme_BAC2_3');
-        $diplôme_BAC2_3Name = $diplôme_BAC2_3->getClientOriginalName();
-        $diplôme_BAC2_3->move(public_path('diplôme_BAC2_3'), $diplôme_BAC2_3Name);
-        $validatedData['diplôme_BAC2_3'] = $diplôme_BAC2_3Name;
-        $diplôme_BAC2_3 = $request->file('diplôme_BAC2_3');
 
         $carteNT = $request->file('carteNT');
         $carteNTName = $carteNT->getClientOriginalName();
         $carteNT->move(public_path('carteNT'), $carteNTName);
         $validatedData['carteNT'] = $carteNTName;
-        $carteNT = $request->file('carteNT');
 
         $releve_note = $request->file('releve_note');
         $releve_noteName = $releve_note->getClientOriginalName();
         $releve_note->move(public_path('releve_note'), $releve_noteName);
         $validatedData['releve_note'] = $releve_noteName;
-        $releve_note = $request->file('releve_note');
 
 
         $user = User::create([
@@ -116,6 +106,7 @@ class RegisteredUserController extends Controller
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
             'photo' => $validatedData['photo'],
+            'role' => 'candidat',
         ]);
 
         $candidat = Candidat::create([
@@ -130,8 +121,7 @@ class RegisteredUserController extends Controller
             'nom_etab' => $validatedData['nom_etab'],
             'cv' => $validatedData['cv'],
             'lettre_motivation' => $validatedData['lettre_motivation'],
-            'diplôme_BAC' => $validatedData['diplôme_BAC'],       //zdt hado
-            'diplôme_BAC2_3' => $validatedData['diplôme_BAC2_3'],
+            'file_derneier_diplome' => $validatedData['file_derneier_diplome'],
             'carteNT' => $validatedData['cin'],
             'releve_note' => $validatedData['releve_note'],
             'user_id' => $user->id,

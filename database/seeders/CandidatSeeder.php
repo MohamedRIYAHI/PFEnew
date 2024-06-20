@@ -26,6 +26,9 @@ class CandidatSeeder extends Seeder
                 'specialite' => 'Gestion',
                 'cv' => 'cv.pdf',
                 'lettre_motivation' => 'lettre.pdf',
+                'file_derneier_diplome' => 'diplome.pdf',
+                'carteNT' => 'carteNT.pdf',
+                'releve_note' => 'releve_note.pdf',
 
             ];
 

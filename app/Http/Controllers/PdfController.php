@@ -17,7 +17,7 @@ class PdfController extends Controller
       // dd(auth()->id());
 
       $user = User::findOrFail(auth()->id());  
-      // $Candidat = Candidat::findOrFail(auth()->id());  
+      $consultation = consultation::findOrFail(auth()->id());  
       
 
 
@@ -27,7 +27,7 @@ class PdfController extends Controller
              'oldyears'=>date('Y')+1,
              'date'=>date('d-m-Y  H:i'),
              'user'=>$user,
-            //  'Candidat'=>$Candidat
+             'consultation'=>$consultation
          ];
        $pdf=Pdf::loadView('generate-product-pdf',$data);
          return $pdf->download("$user->nom\_$user->prenom.pdf");

@@ -58,7 +58,8 @@ Route::get('/dashboard', function () {
     Route::put('/consultations/rejeter/{consultation}', [ConsultationController::class, 'rejeter'])->name('consultations.rejeter');
     Route::put('/consultations/{consultation}', [ConsultationController::class, 'update'])->name('consultations.update');
     Route::delete('/consultations/{consultation}', [ConsultationController::class, 'destroy'])->name('consultations.destroy');
-
+    // search
+    Route::get('/consultations/search', [ConsultationController::class, 'search'])->name('consultations.search');
 
 
     Route::group(['prefix' => 'messages', 'as' => 'messages'], function () {

@@ -6,6 +6,8 @@ use App\Models\Candidat;
 use App\Models\Chef;
 use App\Models\Consultation;
 use App\Models\Filiere;
+use App\Models\User;
+
 
 use Illuminate\Http\Request;
 
@@ -44,6 +46,7 @@ class ConsultationController extends Controller
 
         // Default: return all consultations
         $consultations = Consultation::all();
+
         return view('consultations.index', compact('consultations'));
     }
 
@@ -110,5 +113,19 @@ class ConsultationController extends Controller
     {
         $consultation->delete();
         return redirect()->route('consultations.index');
+    }
+
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('searchQuery');
+
+        // i want to search by the consultation by the candidat name the candidat name is in the User table
+        $consultations = Consultation::whereHas('candidat', function ($query) use ($searchQuery) {
+            $query->whereHas('user', function ($query) use ($searchQuery) {
+                $query->where('nom', 'like', "%$searchQuery%");
+            });
+        })->get();
+
+        return view('consultations.index', compact('consultations'));
     }
 }

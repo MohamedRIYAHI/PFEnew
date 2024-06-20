@@ -42,6 +42,15 @@
         <div class="mb-4">
             <p><span class="font-bold">Telecharger Lettre de motivation:</span> <a href="{{ asset('lettre_motivation/'.$consultation->candidat->lettre_motivation) }}" download>Telecharger</a></p>
         </div>
+        <div class="mb-4">
+            <p><span class="font-bold">Telecharger La derneier diplome de ce candidat:</span> <a href="{{ asset('file_derneier_diplome/'.$consultation->candidat->file_derneier_diplome) }}" download>Telecharger</a></p>
+        </div>
+        <div class="mb-4">
+            <p><span class="font-bold">Telecharger La Carte National:</span> <a href="{{ asset('carteNT/'.$consultation->candidat->carteNT) }}" download>Telecharger</a></p>
+        </div>
+        <div class="mb-4">
+            <p><span class="font-bold">Telecharger Le releve de note:</span> <a href="{{ asset('releve_note/'.$consultation->candidat->releve_note) }}" download>Telecharger</a></p>
+        </div>
     </div>
 </div>
 

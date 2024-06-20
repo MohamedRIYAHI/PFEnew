@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('cin');
             $table->string('phone');
             $table->string('phone2')->nullable();
-            $table->text('photo')->nullable()->default('profile.jpg');
+            $table->text('photo')->nullable();
             $table->enum('sexe',['homme','femme'])->default('homme');
             $table->date('date_naissance');
             $table->string('lieu_naissance');

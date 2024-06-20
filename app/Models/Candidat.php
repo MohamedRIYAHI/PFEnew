@@ -21,8 +21,7 @@ class Candidat extends Model
         'nom_etab',
         'cv',
         'lettre_motivation',
-        'diplôme_BAC',
-        'diplôme_BAC2_3',
+        'file_derneier_diplome',
         'carteNT',
         'releve_note',
     ];

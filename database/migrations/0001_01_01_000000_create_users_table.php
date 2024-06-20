@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('cin')->nullable();
             $table->string('phone')->nullable();
-            $table->text('photo')->nullable()->default('profile.jpg');
+            $table->text('photo')->nullable();
             $table->enum('sexe',['homme','femme'])->nullable()->default('homme');
             $table->date('date_naissance')->nullable();
             $table->string('lieu_naissance')->nullable();

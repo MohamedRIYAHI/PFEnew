@@ -54,7 +54,7 @@
                                 {{ __('Profile') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('consultations.index')">
-                                {{ __('Liste des Consultations') }}
+                                {{ __('Liste des Candidatures') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('messages')"
                                         :active="request()->routeIs('messages') || request()->routeIs('messages.*')">

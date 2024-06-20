@@ -25,8 +25,7 @@ return new class extends Migration
             $table->string('status');
             $table->text('cv');
             $table->text('lettre_motivation');
-            $table->text('diplôme_BAC');
-            $table->text('diplôme_BAC2_3');
+            $table->text('file_derneier_diplome');
             $table->text('carteNT');
             $table->text('releve_note');
 
