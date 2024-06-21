@@ -93,7 +93,7 @@
                                 class="btn btn-primary">Voir</a>
                             @endif
                             @if (Auth::user()->role === 'candidat')
-                                    <a href="{{ route('formpdf', $consultation->id) }}"
+                                    <a href="{{ route('pdf', $consultation->id) }}"
                                        class="btn btn-primary">telecherger</a>
                                 @endif
                             @if (Auth::user()->role === 'chef_filiere')

@@ -49,7 +49,7 @@ th{
                     </tr>
                     <tr class="c2">
                         <td> <span class="nn">Filière :  </span> </td>
-                        <td>{{ $consultation->filiere->nom }}</td>
+                        <td>{{ $user->nom }}</td>
                     </tr>
 
                 </table>
